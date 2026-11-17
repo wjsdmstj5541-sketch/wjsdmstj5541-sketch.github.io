@@ -1,0 +1,110 @@
+/* SEO HARU — A4 landscape photobook PDF */
+@page { size: A4 landscape; margin: 0; }
+
+:root {
+  --paper: #f6f4ef;
+  --ink: #141414;
+  --mute: #8d8b86;
+  --line: #d9d6cf;
+  --mx: 14mm;
+  --font: "Helvetica Neue", Helvetica, Arial, "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 8.5pt/1.42 var(--font);
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+}
+.mute { color: var(--mute); }
+.num { font-variant-numeric: tabular-nums; }
+ul { list-style: none; }
+
+.sheet {
+  position: relative;
+  width: 297mm;
+  height: 210mm;
+  overflow: hidden;
+  background: var(--paper);
+  padding: 12mm var(--mx);
+  break-after: page;
+  page-break-after: always;
+}
+.sheet:last-child { break-after: auto; page-break-after: auto; }
+
+@media screen {
+  body { background: #d6d3cc; padding: 10mm 0; }
+  .sheet { margin: 0 auto 10mm; }
+}
+
+.g { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 5mm; }
+.foot {
+  position: absolute; left: var(--mx); right: var(--mx); bottom: 8mm;
+  display: flex; justify-content: space-between; color: var(--mute); font-size: 7pt;
+}
+.ph { width: 100%; }
+
+/* cover */
+.cover .top { display: flex; justify-content: space-between; }
+.cover .top .r { text-align: right; }
+.cover .photo {
+  position: absolute; left: 50%; bottom: 14mm; transform: translateX(-50%);
+  height: 100mm;
+}
+.cover .photo img, .cover .photo .ph { height: 100%; width: auto; display: block; }
+.cover .cap { position: absolute; bottom: 14mm; left: calc(50% + 42mm); }
+
+/* intro + contents */
+.intro-text { grid-column: 1 / 7; font-size: 10pt; line-height: 1.55; }
+.intro-text p + p { margin-top: 1em; }
+.contents { grid-column: 8 / 13; }
+.contents .h { color: var(--mute); margin-bottom: 3mm; }
+.contents li { display: grid; grid-template-columns: 9mm 1fr 22mm 8mm; padding: 1.6mm 0; border-top: .25mm solid var(--line); }
+.contents li:last-child { border-bottom: .25mm solid var(--line); }
+.contents li > :last-child { text-align: right; }
+.page-label { position: absolute; left: var(--mx); top: 12mm; color: var(--mute); }
+.intro .g, .about .g { margin-top: 22mm; }
+
+/* project title page */
+.ptitle .arrow { color: var(--mute); font-size: 16pt; font-weight: 300; line-height: 1; }
+.ptitle .t { grid-column: 1 / 6; }
+.ptitle h1 { margin-top: 5mm; font-size: 34pt; line-height: .98; font-weight: 500; letter-spacing: -.03em; }
+.ptitle .kr { display: block; margin-top: 4mm; font-size: 11pt; color: var(--mute); }
+.ptitle dl { grid-column: 6 / 8; }
+.ptitle dt { color: var(--mute); }
+.ptitle dd + dt { margin-top: 3mm; }
+.ptitle .desc { grid-column: 8 / 13; }
+.ptitle .desc p + p { margin-top: 3mm; }
+.ptitle .g { margin-top: 26mm; align-items: start; }
+.ptitle .bignum { position: absolute; left: var(--mx); bottom: 16mm; font-size: 40pt; font-weight: 300; color: var(--mute); letter-spacing: -.02em; }
+
+/* plate page */
+.plate .head { display: flex; justify-content: space-between; }
+.plate .stage {
+  position: absolute; top: 22mm; bottom: 34mm; left: var(--mx); right: var(--mx);
+  display: flex; align-items: center; justify-content: center;
+}
+.plate .stage.l { justify-content: flex-start; padding-left: 40mm; }
+.plate .stage.r { justify-content: flex-end; padding-right: 40mm; }
+.plate .stage img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; }
+.plate .stage .ph { height: 100%; width: auto; }
+.plate .cap {
+  position: absolute; left: var(--mx); bottom: 16mm; width: 150mm;
+  display: grid; grid-template-columns: 8mm 1fr;
+}
+
+/* about / cv */
+.about .bio { grid-column: 1 / 5; }
+.about .bio p + p { margin-top: 3mm; }
+.about .cv { grid-column: 6 / 13; columns: 2; column-gap: 8mm; }
+.about .sec { break-inside: avoid; padding-top: 2mm; border-top: .25mm solid var(--line); margin-bottom: 6mm; }
+.about .sec h2 { font-size: inherit; font-weight: 400; margin-bottom: 2mm; }
+.about .sec li { display: grid; grid-template-columns: 18mm 1fr; column-gap: 3mm; }
+.about .sec li + li { margin-top: 1.4mm; }
+
+/* back */
+.back .center { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); text-align: center; }
+.back .center .name { font-size: 20pt; font-weight: 500; letter-spacing: -.02em; margin-bottom: 6mm; }
