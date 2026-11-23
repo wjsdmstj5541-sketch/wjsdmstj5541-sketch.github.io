@@ -118,8 +118,9 @@ figure figcaption { margin-top: 8px; }
 .path a:hover { color: var(--link); text-decoration: underline; text-underline-offset: 3px; }
 .path .sep { margin: 0 .45em; color: var(--line); }
 .path [aria-current] { color: var(--ink); }
-.mast-title h1 { font-family: var(--serif); font-size: calc(var(--big) * 1.15); line-height: .95; font-weight: 400; letter-spacing: -.02em; }
-.mast-title .kr { display: block; margin-top: 12px; font-size: 15px; letter-spacing: -.01em; font-weight: 400; color: var(--mute); }
+/* title kept small — the photographs carry the page */
+.mast-title h1 { font: inherit; }
+.mast-title .kr { display: block; color: var(--mute); }
 .mast-meta { grid-column: 5 / 7; }
 .mast-meta dt { color: var(--mute); }
 .mast-meta dd + dt { margin-top: var(--line-h); }
@@ -177,7 +178,7 @@ figure figcaption { margin-top: 8px; }
   align-items: end;
 }
 .next .label { grid-column: 1 / 5; color: var(--mute); }
-.next .big { grid-column: 5 / 13; font-family: var(--serif); font-size: calc(var(--big) * 1.15); line-height: 1; font-weight: 400; letter-spacing: -.02em; }
+.next .big { grid-column: 5 / 13; }
 
 /* ---------- notes ---------- */
 .notes { padding: 0 var(--pad); margin-top: clamp(100px, 13vw, 200px); }
