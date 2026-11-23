@@ -209,7 +209,7 @@
 
     const [a, b, ...rest] = p.images;
     let plates = "";
-    if (a) plates += fig(a, 1, "1 / 5", `<span class="bignum">(${pad(1)})</span>`);
+    if (a) plates += fig(a, 1, "1 / 5");
     if (b) plates += fig(b, 2, ratioNum(b.ratio) < 1 ? "7 / 12" : "5 / 13");
 
     const wide = ["2 / 12", "1 / 9", "4 / 13"];
