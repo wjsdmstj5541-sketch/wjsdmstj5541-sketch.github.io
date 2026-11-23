@@ -134,6 +134,30 @@ window.PROJECTS = [
   },
   {
     id: "04",
+    title: "Profile",
+    titleKr: "프로필",
+    field: "portrait",
+    year: 2026,
+    date: "2026. 6.",
+    location: "Studio, Seoul",
+    role: "Photography",
+    publication: "프로필 촬영",
+    desc: [
+      "[작업 설명이 들어갑니다.]",
+      "<span class=\"mute\">[English text]</span>"
+    ],
+    images: [
+      { src: "images/profile-series/profile-01.jpg", ratio: "1599/2400", caption: "" },
+      { src: "images/profile-series/profile-02.jpg", ratio: "1715/2400", caption: "" },
+      { src: "images/profile-series/profile-03.jpg", ratio: "1714/2400", caption: "" },
+      { src: "images/profile-series/profile-04.jpg", ratio: "1599/2400", caption: "" },
+      { src: "images/profile-series/profile-05.jpg", ratio: "1599/2400", caption: "" },
+      { src: "images/profile-series/profile-06.jpg", ratio: "1598/2400", caption: "" },
+      { src: "images/profile-series/profile-07.jpg", ratio: "1598/2400", caption: "" }
+    ]
+  },
+  {
+    id: "05",
     title: "Outside the National Assembly",
     titleKr: "국회 앞",
     field: "other",
@@ -154,7 +178,7 @@ window.PROJECTS = [
     ]
   },
   {
-    id: "05",
+    id: "06",
     title: "Hannam-dong",
     titleKr: "한남동 관저 앞",
     field: "other",
@@ -174,7 +198,7 @@ window.PROJECTS = [
     ]
   },
   {
-    id: "06",
+    id: "07",
     title: "Olympic Handball Arena",
     titleKr: "올림픽 핸드볼경기장 앞",
     field: "other",
