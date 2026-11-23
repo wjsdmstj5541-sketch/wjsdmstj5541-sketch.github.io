@@ -39,7 +39,7 @@ window.SITE = {
   allIntro: {
     title: "Intro",
     titleKr: "인트로",
-    photos: ["images/portrait/portrait-02.jpg"],
+    photos: ["images/intro.jpg"],
     text: [
       "[여기에 내 사진의 분위기를 설명하는 글이 들어갑니다.]",
       "<span class=\"mute\">[English text]</span>"
