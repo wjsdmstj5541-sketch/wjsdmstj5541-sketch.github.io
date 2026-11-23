@@ -22,7 +22,9 @@ window.SITE = {
   phone: "010-5541-0357",
   instagram: "https://www.instagram.com/haaaaaaaaaaaaaaaaaaaaaaaaaaaru/",
   instagramHandle: "@haaaaaaaaaaaaaaaaaaaaaaaaaaaru",
-  photo: "images/profile.jpg",              // About 페이지 프로필 사진
+  photo: "images/profile.jpg",
+  // 첫 페이지 고정 사진 (caption 은 비워 두면 표시 안 함)
+  homePhoto: { src: "images/home.jpg", caption: "" },              // About 페이지 프로필 사진
   base: "Seoul, KR",
   edition: "Portfolio Vol. 01",
   year: 2026,

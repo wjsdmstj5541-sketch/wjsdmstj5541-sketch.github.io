@@ -90,7 +90,13 @@
 
     $("#home-meta").innerHTML = `${esc(S.edition)}<br>${S.year} — ${esc(S.base)}`;
 
-    // random featured photograph on every visit
+    // fixed photograph (SITE.homePhoto); falls back to a random featured one if unset
+    const H = S.homePhoto;
+    if (H && H.src) {
+      $("#feature").innerHTML = `<a href="work.html">${media({ src: H.src, alt: H.caption || "" })}</a>` +
+        (H.caption ? `<figcaption>${H.caption}</figcaption>` : "");
+      return;
+    }
     let pool = [];
     P.forEach((p) => p.images.forEach((im) => { if (im.featured) pool.push({ p, im }); }));
     if (!pool.length) pool = P.map((p) => ({ p, im: cover(p) }));
