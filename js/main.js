@@ -69,8 +69,9 @@
     $("#intro").innerHTML = paras(S.intro);
 
     const groups = [
-      ["Selected Work <span class=\"mute\">작업</span>", [["work.html", "Grid"], ["work.html?view=list", "List"]]],
-      ["Fields <span class=\"mute\">분야</span>", Object.entries(F).map(([k, f]) => [`work.html?field=${k}`, `${f.en} <span class="mute">${f.ko}</span>`])],
+      ["Work <span class=\"mute\">작업</span>", [["work.html", "Intro <span class=\"mute\">인트로</span>"]]
+        .concat(Object.entries(F).map(([k, f]) => [`work.html?field=${k}`, `${f.en} <span class="mute">${f.ko}</span>`]))
+        .concat([["work.html?view=list", "List <span class=\"mute\">목록</span>"]])],
       ["Notes <span class=\"mute\">작업 노트</span>", (window.NOTES.entries || []).slice(0, 4).map((e, k) => [`notes.html#note-${k + 1}`, esc(e.title)])],
       ["About <span class=\"mute\">소개</span>", [["about.html", "Profile"], [`mailto:${S.email}`, "E-mail"], [`tel:${S.phone}`, S.phone], [S.instagram, "Instagram"]]]
     ];
@@ -108,32 +109,25 @@
 
     const viewOpts = `<span class="opts"><a href="${url("grid", f)}"${on(view === "grid")}>Grid</a>, <a href="${url("list", f)}"${on(view === "list")}>List</a></span>`;
     const fieldOpts = `<span class="opts">` +
-      [`<a href="${url(view, "")}"${on(!f)}>All (${P.length})</a>`]
+      [`<a href="${url(view, "")}"${on(!f)}>${view === "list" ? `All (${P.length})` : "Intro"}</a>`]
         .concat(Object.entries(F).map(([k, v]) => `<a href="${url(view, k)}"${on(f === k)}>${v.en} (${P.filter((p) => p.field === k).length})</a>`))
         .join("<br>") + `</span>`;
 
-    // All + Grid = archive: every photograph, one wall
-    const archive = view === "grid" && !f;
-    const AI = S.allIntro || { title: "Archive", titleKr: "모든 사진", photos: [], text: [] };
-    const all = [];
-    if (archive) P.forEach((p) => p.images.forEach((im) => { if (im.src) all.push({ p, im }); }));
+    // no field + grid = Intro: a short introduction to my photographs
+    const intro = view === "grid" && !f;
+    const AI = S.allIntro || { title: "Intro", titleKr: "인트로", photos: [], text: [] };
 
     const head = mast({
-      title: archive ? esc(AI.title) : f ? field(f).en : "Selected Work",
-      kr: archive ? esc(AI.titleKr) : f ? field(f).ko : "작업",
+      title: intro ? esc(AI.title) : f ? field(f).en : "Selected Work",
+      kr: intro ? esc(AI.titleKr) : f ? field(f).ko : "작업",
       meta: [["View", viewOpts], ["Field", fieldOpts]],
-      desc: archive ? AI.text : S.workIntro
+      desc: intro ? AI.text : S.workIntro
     });
 
     let body;
-    if (archive) {
-      const intro = (AI.photos || []).slice(0, 2).map((src) => `<figure>${media({ src })}</figure>`).join("");
-      body = (intro ? `<section class="intro-photos grid">${intro}</section>` : "") +
-        `<div class="arc-label">Archive <span class="mute">모든 사진 (${pad(all.length)})</span></div>` +
-        `<section class="archive">` + all.map(({ p, im }, n) => `<figure class="arc">
-          <button class="zoom" data-i="${n}" aria-label="크게 보기 ${pad(n + 1, 3)}"><span class="arc-frame"><img src="${esc(im.src)}" alt="${esc(im.caption || "")}" loading="lazy"></span></button>
-          <figcaption><span class="num mute">${pad(n + 1, 3)}</span><span>${esc(p.title)} <span class="mute">${esc(p.titleKr)}, ${p.year}</span></span></figcaption>
-        </figure>`).join("") + `</section>`;
+    if (intro) {
+      const pics = (AI.photos || []).slice(0, 2).map((src) => `<figure>${media({ src })}</figure>`).join("");
+      body = pics ? `<section class="intro-photos grid">${pics}</section>` : "";
     } else if (view === "grid") {
       const slots = [
         { c: "1 / 6", t: 0 }, { c: "8 / 13", t: 9 },
@@ -158,7 +152,6 @@
     }
 
     shell("Work", head + body);
-    if (archive) lightbox(all, ".archive .zoom");
 
     if (view === "list") {
       const pv = $("#preview");
