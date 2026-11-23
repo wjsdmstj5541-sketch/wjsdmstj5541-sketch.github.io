@@ -207,18 +207,18 @@
     const fig = (im, n, col, extra = "") =>
       `<figure style="grid-column:${col}"><button class="zoom" data-i="${n - 1}" aria-label="크게 보기 ${pad(n)}">${media(im, pad(n))}</button>${extra}${cap(im, n)}</figure>`;
 
-    const [a, b, ...rest] = p.images;
-    let plates = "";
-    if (a) plates += fig(a, 1, "1 / 5");
-    if (b) plates += fig(b, 2, ratioNum(b.ratio) < 1 ? "7 / 12" : "5 / 13");
-
-    const wide = ["2 / 12", "1 / 9", "4 / 13"];
-    const tall = ["7 / 11", "2 / 6", "8 / 12", "4 / 8"];
-    let wi = 0, ti = 0;
-    rest.forEach((im, k) => {
-      const col = ratioNum(im.ratio) > 1.4 ? wide[wi++ % wide.length] : tall[ti++ % tall.length];
-      plates += fig(im, k + 3, col);
+    // centred layout: upright photos in pairs (3–7 | 7–11), a lone upright one in the middle (5–9),
+    // landscape photos across the centre (3–11). Order is kept.
+    let plates = "", hold = null;
+    const flush = () => { if (hold) { plates += fig(hold.im, hold.n, "5 / 9"); hold = null; } };
+    p.images.forEach((im, k) => {
+      const n = k + 1;
+      if (ratioNum(im.ratio) > 1.2) { flush(); plates += fig(im, n, "3 / 11"); return; }
+      if (!hold) { hold = { im, n }; return; }
+      plates += fig(hold.im, hold.n, "3 / 7") + fig(im, n, "7 / 11");
+      hold = null;
     });
+    flush();
 
     const prev = P[(i - 1 + P.length) % P.length];
     shell("Work", head + `<section class="plates grid">${plates}</section>
