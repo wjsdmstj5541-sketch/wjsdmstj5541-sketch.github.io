@@ -204,24 +204,21 @@
     });
 
     const cap = (im, n) => `<figcaption><span class="num">${pad(n)}</span><span>${esc(im.caption)}${im.captionEn ? ` <span class="mute">${esc(im.captionEn)}</span>` : ""}</span></figcaption>`;
-    const fig = (im, n, col, extra = "") =>
-      `<figure style="grid-column:${col}"><button class="zoom" data-i="${n - 1}" aria-label="크게 보기 ${pad(n)}">${media(im, pad(n))}</button>${extra}${cap(im, n)}</figure>`;
-
-    // centred layout: upright photos in pairs (3–7 | 7–11), a lone upright one in the middle (5–9),
-    // landscape photos across the centre (3–11). Order is kept.
-    let plates = "", hold = null;
-    const flush = () => { if (hold) { plates += fig(hold.im, hold.n, "5 / 9"); hold = null; } };
-    p.images.forEach((im, k) => {
-      const n = k + 1;
-      if (ratioNum(im.ratio) > 1.2) { flush(); plates += fig(im, n, "3 / 11"); return; }
-      if (!hold) { hold = { im, n }; return; }
-      plates += fig(hold.im, hold.n, "3 / 7") + fig(im, n, "7 / 11");
-      hold = null;
-    });
-    flush();
+    // one large photograph on top, then the rest as equal-sized thumbnails in a row;
+    // clicking any of them opens the viewer at the photograph's real proportions
+    const [first, ...rest] = p.images;
+    const zoom = (n, inner) => `<button class="zoom" data-i="${n - 1}" aria-label="크게 보기 ${pad(n)}">${inner}</button>`;
+    let plates = first ? `<figure class="plate-hero">${zoom(1, media(first, pad(1)))}${cap(first, 1)}</figure>` : "";
+    if (rest.length) {
+      plates += `<div class="thumbs" style="--n:${Math.min(rest.length, 6)}">` + rest.map((im, k) => {
+        const n = k + 2;
+        const pic = im.src ? `<img src="${esc(im.src)}" alt="${esc(im.caption || "")}" loading="lazy">` : media(im);
+        return `<figure>${zoom(n, `<span class="thumb">${pic}</span>`)}${cap(im, n)}</figure>`;
+      }).join("") + `</div>`;
+    }
 
     const prev = P[(i - 1 + P.length) % P.length];
-    shell("Work", head + `<section class="plates grid">${plates}</section>
+    shell("Work", head + `<section class="plates">${plates}</section>
       <nav class="next grid" aria-label="Projects">
         <span class="label"><a href="${projectUrl(prev)}">← (${esc(prev.id)}) ${esc(prev.title)}</a><br>Next project <span class="num">(${esc(next.id)})</span></span>
         <a class="big" href="${projectUrl(next)}">${esc(next.title)} →</a>
