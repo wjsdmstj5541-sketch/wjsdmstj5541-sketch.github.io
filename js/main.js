@@ -114,19 +114,23 @@
 
     // All + Grid = archive: every photograph, one wall
     const archive = view === "grid" && !f;
+    const AI = S.allIntro || { title: "Archive", titleKr: "모든 사진", photos: [], text: [] };
     const all = [];
     if (archive) P.forEach((p) => p.images.forEach((im) => { if (im.src) all.push({ p, im }); }));
 
     const head = mast({
-      title: archive ? "Archive" : f ? field(f).en : "Selected Work",
-      kr: archive ? "모든 사진" : f ? field(f).ko : "작업",
+      title: archive ? esc(AI.title) : f ? field(f).en : "Selected Work",
+      kr: archive ? esc(AI.titleKr) : f ? field(f).ko : "작업",
       meta: [["View", viewOpts], ["Field", fieldOpts]],
-      desc: S.workIntro
+      desc: archive ? AI.text : S.workIntro
     });
 
     let body;
     if (archive) {
-      body = `<section class="archive">` + all.map(({ p, im }, n) => `<figure class="arc">
+      const intro = (AI.photos || []).slice(0, 2).map((src) => `<figure>${media({ src })}</figure>`).join("");
+      body = (intro ? `<section class="intro-photos grid">${intro}</section>` : "") +
+        `<div class="arc-label">Archive <span class="mute">모든 사진 (${pad(all.length)})</span></div>` +
+        `<section class="archive">` + all.map(({ p, im }, n) => `<figure class="arc">
           <button class="zoom" data-i="${n}" aria-label="크게 보기 ${pad(n + 1, 3)}"><span class="arc-frame"><img src="${esc(im.src)}" alt="${esc(im.caption || "")}" loading="lazy"></span></button>
           <figcaption><span class="num mute">${pad(n + 1, 3)}</span><span>${esc(p.title)} <span class="mute">${esc(p.titleKr)}, ${p.year}</span></span></figcaption>
         </figure>`).join("") + `</section>`;

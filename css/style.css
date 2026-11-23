@@ -2,11 +2,11 @@
    no shadows, no rounded corners, no cards, no motion beyond plain hover */
 
 :root {
-  --paper: #f6f4ef;
-  --paper-2: #fbfaf7;
+  --paper: #ffffff;
+  --paper-2: #fafafa;
   --ink: #141414;
-  --mute: #8d8b86;
-  --line: #d9d6cf;
+  --mute: #8a8a8a;
+  --line: #e3e3e3;
   --pad: clamp(16px, 1.7vw, 28px);
   --fs: 12px;
   --lh: 1.4;
@@ -27,17 +27,6 @@ body {
   min-height: 100vh;
 }
 
-/* printed paper grain */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 50;
-  pointer-events: none;
-  opacity: .32;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .43 0 0 0 0 .4 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
 
 a { color: inherit; text-decoration: none; }
 a:hover { color: var(--mute); }
@@ -158,6 +147,13 @@ figure figcaption { margin-top: 8px; }
 .work-list .row > :nth-child(5) { grid-column: 9 / 11; }
 .work-list .row > :nth-child(6) { grid-column: 11 / 13; justify-self: end; }
 .work-list .head { color: var(--mute); border-top: 0; }
+/* all — a short introduction to my photographs, then the wall */
+.intro-photos { padding: 0 var(--pad); margin-top: clamp(80px, 10vw, 150px); align-items: start; }
+.intro-photos figure:nth-child(1) { grid-column: 2 / 7; }
+.intro-photos figure:nth-child(2) { grid-column: 8 / 12; margin-top: 14vw; }
+.intro-photos figure:only-child { grid-column: 4 / 10; margin-top: 0; }
+.arc-label { padding: 0 var(--pad); margin-top: clamp(120px, 14vw, 220px); }
+.arc-label + .archive { margin-top: clamp(40px, 5vw, 70px); }
 /* archive — every photograph on one wall, hung like an exhibition */
 .archive {
   display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -233,6 +229,7 @@ figure figcaption { margin-top: 8px; }
   .work-list .row > :nth-child(6) { grid-column: 3 !important; }
   .work-list .row > :nth-child(3), .work-list .row > :nth-child(4), .work-list .row > :nth-child(5) { display: none; }
   .preview { display: none; }
+  .intro-photos figure:nth-child(2) { margin-top: 0; }
   .archive { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 44px; }
   .arc-frame { padding: 4%; }
   .arc figcaption { padding: 0 4%; grid-template-columns: 30px 1fr; }

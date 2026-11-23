@@ -33,6 +33,17 @@ window.SITE = {
     "<span class=\"mute\">Adventure, at heart.</span>"
   ],
 
+  // Work › All 첫 화면 — 제목, 사진 한두 장, 내 사진의 분위기 소개
+  allIntro: {
+    title: "Mood",                // [임시 제목]
+    titleKr: "분위기",
+    photos: ["images/portrait/portrait-02.jpg", "images/portrait/portrait-01.jpg"],
+    text: [
+      "[여기에 내 사진의 분위기를 설명하는 글이 들어갑니다.]",
+      "<span class=\"mute\">[English text]</span>"
+    ]
+  },
+
   workIntro: [
     "인물 사진, 그리고 그 밖에 찍은 것들.",
     "<span class=\"mute\">Portraits, and other things.</span>"
