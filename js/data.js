@@ -86,23 +86,24 @@ window.PROJECTS = [
   },
   {
     id: "02",
-    title: "Portraits",
-    titleKr: "인물",
+    title: "Narcissism",
+    titleKr: "나르시시즘",
     field: "portrait",
-    year: 2026,
-    date: "2026",
+    year: 2025,
+    date: "2025. 12.",
     location: "Studio, Seoul",
     role: "Photography",
     publication: "개인 작업",
     desc: [
-      "스튜디오에서 찍은 개인 인물 작업입니다.",
-      "<span class=\"mute\">Personal portrait work, made in the studio.</span>"
+      "[작업 설명이 들어갑니다.]",
+      "<span class=\"mute\">[English text]</span>"
     ],
     images: [
-      { src: "images/portrait/portrait-01.jpg", ratio: "1599/2400", featured: true, caption: "검은 드레스, 뒷모습.", captionEn: "Black dress, from behind." },
-      { src: "images/portrait/portrait-03.jpg", ratio: "1122/1402", featured: true, caption: "분홍 가발.", captionEn: "Pink wig." },
-      { src: "images/portrait/portrait-04.jpg", ratio: "1714/2400", featured: true, caption: "흰 벽 앞에 선 사람.", captionEn: "Standing against a white wall." },
-      { src: "images/portrait/portrait-02.jpg", ratio: "1714/2400", featured: true, caption: "머리를 넘기는 순간.", captionEn: "Hair in motion." }
+      { src: "images/narcissism/narcissism-01.jpg", ratio: "2400/1500", caption: "" },
+      { src: "images/narcissism/narcissism-02.jpg", ratio: "2400/1500", caption: "" },
+      { src: "images/narcissism/narcissism-03.jpg", ratio: "1714/2400", caption: "" },
+      { src: "images/narcissism/narcissism-04.jpg", ratio: "1599/2400", caption: "" },
+      { src: "images/narcissism/narcissism-05.jpg", ratio: "1714/2400", caption: "" }
     ]
   },
   {
