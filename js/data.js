@@ -167,6 +167,7 @@ window.PROJECTS = [
     location: "Studio, Seoul",
     role: "Photography",
     publication: "개인 작업 — 공모전 출품",
+    hero: 6,                      // 크게 보여줄 사진 번호
     desc: [
       "[작업 설명이 들어갑니다.]",
       "<span class=\"mute\">[English text]</span>"
