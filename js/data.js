@@ -29,8 +29,8 @@ window.SITE = {
 
   // 첫 페이지 소개 문단 (HTML 사용 가능)
   intro: [
-    "서하루(본명 전은서)는 서울을 기반으로 활동하는 사진가이자 이미지 에디터입니다. 뉴스와 다큐멘터리, 인물 사진을 찍고, 한 장의 사진이 지면과 화면에서 어떻게 읽히는지를 고민하며 셀렉과 크롭, 시퀀스를 편집합니다.",
-    "<span class=\"mute\">SEO HARU (Eunseo Jeon) is a Seoul-based photographer and image editor working across news, documentary and portrait photography, with a focus on selection, cropping and sequencing for print and digital media.</span>"
+    "서하루(전은서). 인물 사진을 찍고, 가끔 다른 것도 찍는 사람입니다.",
+    "<span class=\"mute\">SEO HARU (Eunseo Jeon). Takes portraits, and sometimes other things.</span>"
   ],
 
   workIntro: [
