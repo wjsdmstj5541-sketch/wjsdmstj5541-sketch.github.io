@@ -29,8 +29,7 @@ window.SITE = {
 
   // 첫 페이지 소개 문단 (HTML 사용 가능)
   intro: [
-    "서하루(전은서). 인물 사진을 찍고, 가끔 다른 것도 찍는 사람입니다.",
-    "<span class=\"mute\">SEO HARU (Eunseo Jeon). Takes portraits, and sometimes other things.</span>"
+    "마음에, 모험을"
   ],
 
   workIntro: [
