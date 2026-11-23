@@ -48,11 +48,20 @@
     </footer>`;
   }
 
-  function mast({ arrow, title, kr, meta, desc, aside }) {
+  // address-bar style path: seoharu / work / intro — every step but the last is a link
+  const slug = (t) => String(t).toLowerCase().replace(/[^a-z0-9가-힣]+/g, "-").replace(/^-|-$/g, "");
+  function crumbs(path) {
+    const all = [["seoharu", "index.html"]].concat(path);
+    return `<nav class="path" aria-label="현재 위치">` + all.map(([t, h], k) =>
+      k === all.length - 1 ? `<span aria-current="page">${esc(t)}</span>` : `<a href="${h}">${esc(t)}</a>`
+    ).join(`<span class="sep">/</span>`) + `</nav>`;
+  }
+
+  function mast({ path = [], title, kr, meta, desc, aside }) {
     const metaHtml = meta.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("");
     return `<section class="mast grid">
       <div class="mast-title">
-        ${arrow ? `<a class="arrow" href="${arrow.href}" aria-label="${arrow.label}">${arrow.glyph}</a>` : `<span class="arrow" aria-hidden="true">→</span>`}
+        ${crumbs(path)}
         <h1>${title}</h1>${kr ? `<span class="kr">${kr}</span>` : ""}
       </div>
       <dl class="mast-meta">${metaHtml}</dl>
@@ -118,6 +127,7 @@
     const AI = S.allIntro || { title: "Intro", titleKr: "인트로", photos: [], text: [] };
 
     const head = mast({
+      path: [["work", "work.html"], [view === "list" ? (f ? `list / ${f}` : "list") : f || "intro", ""]],
       title: intro ? esc(AI.title) : f ? field(f).en : "Selected Work",
       kr: intro ? esc(AI.titleKr) : f ? field(f).ko : "작업",
       meta: [["View", viewOpts], ["Field", fieldOpts]],
@@ -174,7 +184,7 @@
     document.title = `${p.title} — ${S.name}`;
 
     const head = mast({
-      arrow: { href: "work.html", glyph: "←", label: "Back to work" },
+      path: [["work", "work.html"], [p.field, `work.html?field=${p.field}`], [slug(p.title), ""]],
       title: esc(p.title),
       kr: esc(p.titleKr),
       meta: [
@@ -309,6 +319,7 @@
     const N = window.NOTES;
     const list = N.entries || [];
     const head = mast({
+      path: [["notes", ""]],
       title: N.title,
       kr: N.titleKr,
       meta: [["Entries", `<span class="num">${pad(list.length)}</span>`]],
@@ -328,6 +339,7 @@
   /* ---------------- About ---------------- */
   function about() {
     const head = mast({
+      path: [["about", ""]],
       title: "About",
       kr: `${esc(S.realNameKr)} · ${esc(S.nameKr)}`,
       meta: [

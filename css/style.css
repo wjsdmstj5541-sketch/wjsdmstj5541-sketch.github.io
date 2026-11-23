@@ -13,6 +13,7 @@
   --lh: 1.4;
   --line-h: calc(var(--fs) * var(--lh));
   --big: clamp(38px, 4.6vw, 68px);
+  --serif: "Times New Roman", Times, "AppleMyungjo", "Nanum Myeongjo", "Batang", serif;
   --font: "Helvetica Neue", Helvetica, Arial, "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
 }
 
@@ -112,8 +113,12 @@ figure figcaption { margin-top: 8px; }
 /* ---------- masthead (title / meta / description) ---------- */
 .mast { padding: 0 var(--pad); margin-top: clamp(56px, 8vw, 120px); align-items: start; }
 .mast-title { grid-column: 1 / 5; }
-.mast-title .arrow { display: block; font-size: 26px; line-height: 1; color: var(--mute); margin-bottom: 14px; font-weight: 300; }
-.mast-title h1 { font-size: var(--big); line-height: .98; font-weight: 500; letter-spacing: -.03em; }
+.path { color: var(--mute); margin-bottom: 22px; }
+.path a { color: var(--mute); }
+.path a:hover { color: var(--link); text-decoration: underline; text-underline-offset: 3px; }
+.path .sep { margin: 0 .45em; color: var(--line); }
+.path [aria-current] { color: var(--ink); }
+.mast-title h1 { font-family: var(--serif); font-size: calc(var(--big) * 1.15); line-height: .95; font-weight: 400; letter-spacing: -.02em; }
 .mast-title .kr { display: block; margin-top: 12px; font-size: 15px; letter-spacing: -.01em; font-weight: 400; color: var(--mute); }
 .mast-meta { grid-column: 5 / 7; }
 .mast-meta dt { color: var(--mute); }
@@ -172,7 +177,7 @@ figure figcaption { margin-top: 8px; }
   align-items: end;
 }
 .next .label { grid-column: 1 / 5; color: var(--mute); }
-.next .big { grid-column: 5 / 13; font-size: var(--big); line-height: 1; font-weight: 500; letter-spacing: -.03em; }
+.next .big { grid-column: 5 / 13; font-family: var(--serif); font-size: calc(var(--big) * 1.15); line-height: 1; font-weight: 400; letter-spacing: -.02em; }
 
 /* ---------- notes ---------- */
 .notes { padding: 0 var(--pad); margin-top: clamp(100px, 13vw, 200px); }
