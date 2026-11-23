@@ -9,7 +9,8 @@
   const paras = (arr) => arr.map((p) => `<p>${p}</p>`).join("");
   const ratioNum = (r) => { const [a, b] = String(r || "3/2").split("/").map(Number); return a / b; };
   const field = (k) => F[k] || { en: k, ko: "" };
-  const cover = (p) => p.images[p.cover || 0];
+  // outside image of a project = its main photograph (data.js hero, 1-based), else the first
+  const cover = (p) => p.images[Math.min(Math.max((p.hero || 1) - 1, 0), p.images.length - 1)];
   const projectUrl = (p) => `project.html?id=${encodeURIComponent(p.id)}`;
 
   function lum(hex) {
