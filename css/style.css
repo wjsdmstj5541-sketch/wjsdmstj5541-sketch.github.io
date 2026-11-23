@@ -158,6 +158,18 @@ figure figcaption { margin-top: 8px; }
 .work-list .row > :nth-child(5) { grid-column: 9 / 11; }
 .work-list .row > :nth-child(6) { grid-column: 11 / 13; justify-self: end; }
 .work-list .head { color: var(--mute); border-top: 0; }
+/* archive — every photograph on one wall, hung like an exhibition */
+.archive {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(56px, 7vw, 110px) var(--pad);
+  padding: 0 var(--pad); margin-top: clamp(100px, 12vw, 180px);
+}
+.arc .zoom { display: block; width: 100%; cursor: zoom-in; }
+.arc-frame { display: flex; align-items: center; justify-content: center; aspect-ratio: 1 / 1; padding: 9%; }
+.arc-frame img { max-width: 100%; max-height: 100%; width: auto; height: auto; }
+.arc figcaption { display: grid; grid-template-columns: 34px 1fr; padding: 0 9%; margin-top: 0; }
+.arc .zoom:hover img { opacity: .82; }
+@media (max-width: 1100px) and (min-width: 821px) { .archive { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .preview { position: fixed; right: var(--pad); bottom: var(--pad); width: 17vw; z-index: 10; pointer-events: none; visibility: hidden; }
 .preview.is-on { visibility: visible; }
 
@@ -221,6 +233,9 @@ figure figcaption { margin-top: 8px; }
   .work-list .row > :nth-child(6) { grid-column: 3 !important; }
   .work-list .row > :nth-child(3), .work-list .row > :nth-child(4), .work-list .row > :nth-child(5) { display: none; }
   .preview { display: none; }
+  .archive { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 44px; }
+  .arc-frame { padding: 4%; }
+  .arc figcaption { padding: 0 4%; grid-template-columns: 30px 1fr; }
 
   .next .big { margin-top: 8px; }
   .note { row-gap: calc(var(--line-h) * 2); }

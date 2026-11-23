@@ -112,15 +112,25 @@
         .concat(Object.entries(F).map(([k, v]) => `<a href="${url(view, k)}"${on(f === k)}>${v.en} (${P.filter((p) => p.field === k).length})</a>`))
         .join("<br>") + `</span>`;
 
+    // All + Grid = archive: every photograph, one wall
+    const archive = view === "grid" && !f;
+    const all = [];
+    if (archive) P.forEach((p) => p.images.forEach((im) => { if (im.src) all.push({ p, im }); }));
+
     const head = mast({
-      title: f ? field(f).en : "Selected Work",
-      kr: f ? field(f).ko : "작업",
+      title: archive ? "Archive" : f ? field(f).en : "Selected Work",
+      kr: archive ? "모든 사진" : f ? field(f).ko : "작업",
       meta: [["View", viewOpts], ["Field", fieldOpts]],
       desc: S.workIntro
     });
 
     let body;
-    if (view === "grid") {
+    if (archive) {
+      body = `<section class="archive">` + all.map(({ p, im }, n) => `<figure class="arc">
+          <button class="zoom" data-i="${n}" aria-label="크게 보기 ${pad(n + 1, 3)}"><span class="arc-frame"><img src="${esc(im.src)}" alt="${esc(im.caption || "")}" loading="lazy"></span></button>
+          <figcaption><span class="num mute">${pad(n + 1, 3)}</span><span>${esc(p.title)} <span class="mute">${esc(p.titleKr)}, ${p.year}</span></span></figcaption>
+        </figure>`).join("") + `</section>`;
+    } else if (view === "grid") {
       const slots = [
         { c: "1 / 6", t: 0 }, { c: "8 / 13", t: 9 },
         { c: "3 / 8", t: 0 }, { c: "9 / 12", t: 5 },
@@ -144,6 +154,7 @@
     }
 
     shell("Work", head + body);
+    if (archive) lightbox(all, ".archive .zoom");
 
     if (view === "list") {
       const pv = $("#preview");
@@ -203,7 +214,7 @@
         <a class="big" href="${projectUrl(next)}">${esc(next.title)} →</a>
       </nav>`);
 
-    lightbox(p);
+    lightbox(p.images.map((im) => ({ p, im })), ".plates .zoom");
   }
 
   // press-style credit line: place, date — © name
@@ -212,8 +223,9 @@
   }
 
   /* ---------------- Lightbox ---------------- */
-  function lightbox(p) {
-    const imgs = p.images;
+  // items: [{ p: project, im: image }], sel: buttons with data-i that open the viewer
+  function lightbox(items, sel) {
+    const imgs = items.map((x) => x.im);
     const lb = document.createElement("div");
     lb.className = "lb";
     lb.hidden = true;
@@ -223,7 +235,7 @@
     lb.innerHTML = `
       <div class="lb-top grid">
         <span class="lb-count num"></span>
-        <span class="lb-title">${esc(p.title)} <span class="mute">${esc(p.titleKr)}</span></span>
+        <span class="lb-title"></span>
         <button class="lb-close" type="button">Close ✕</button>
       </div>
       <div class="lb-stage">
@@ -247,7 +259,8 @@
     }
     function show(k) {
       cur = (k + imgs.length) % imgs.length;
-      const im = imgs[cur];
+      const im = imgs[cur], p = items[cur].p;
+      $(".lb-title", lb).innerHTML = `${esc(p.title)} <span class="mute">${esc(p.titleKr)}</span>`;
       box.innerHTML = media(im, pad(cur + 1));
       $(".lb-count", lb).textContent = `${pad(cur + 1)} / ${pad(imgs.length)}`;
       $(".lb-cap", lb).innerHTML = `<span>${esc(im.caption)}</span><span class="mute">${esc(im.captionEn || "")}</span><span class="mute">${credit(p, im)}</span>`;
@@ -266,7 +279,7 @@
       if (lastFocus) lastFocus.focus();
     }
 
-    document.querySelectorAll(".plates .zoom").forEach((btn) =>
+    document.querySelectorAll(sel).forEach((btn) =>
       btn.addEventListener("click", () => open(Number(btn.dataset.i))));
     $(".lb-close", lb).addEventListener("click", close);
     $(".lb-prev", lb).addEventListener("click", () => show(cur - 1));
