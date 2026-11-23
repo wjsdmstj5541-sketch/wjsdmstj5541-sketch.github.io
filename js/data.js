@@ -53,7 +53,7 @@ window.SITE = {
 // 분야 — key 는 영문 소문자로 유지하세요
 window.FIELDS = {
   portrait:  { en: "Portrait",  ko: "인물" },
-  elsewhere: { en: "Elsewhere", ko: "그 밖에" }
+  other:     { en: "Other",     ko: "그 밖에" }
 };
 
 // 프로젝트 — 이 순서대로 Work 페이지에 놓입니다
@@ -83,7 +83,7 @@ window.PROJECTS = [
     id: "02",
     title: "Outside the National Assembly",
     titleKr: "국회 앞",
-    field: "elsewhere",
+    field: "other",
     year: 2024,
     date: "2024. 12.",
     location: "Yeouido, Seoul",
@@ -104,7 +104,7 @@ window.PROJECTS = [
     id: "03",
     title: "Hannam-dong",
     titleKr: "한남동 관저 앞",
-    field: "elsewhere",
+    field: "other",
     year: 2025,
     date: "2025. 1.",
     location: "Hannam-dong, Seoul",
@@ -124,7 +124,7 @@ window.PROJECTS = [
     id: "04",
     title: "Olympic Handball Arena",
     titleKr: "올림픽 핸드볼경기장 앞",
-    field: "elsewhere",
+    field: "other",
     year: 2026,
     date: "2026. 6.",
     location: "Olympic Park, Seoul",
