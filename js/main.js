@@ -109,7 +109,7 @@
 
     const viewOpts = `<span class="opts"><a href="${url("grid", f)}"${on(view === "grid")}>Grid</a>, <a href="${url("list", f)}"${on(view === "list")}>List</a></span>`;
     const fieldOpts = `<span class="opts">` +
-      [`<a href="${url(view, "")}"${on(!f)}>${view === "list" ? `All (${P.length})` : "Intro"}</a>`]
+      (view === "list" ? [] : [`<a href="${url(view, "")}"${on(!f)}>Intro</a>`])
         .concat(Object.entries(F).map(([k, v]) => `<a href="${url(view, k)}"${on(f === k)}>${v.en} (${P.filter((p) => p.field === k).length})</a>`))
         .join("<br>") + `</span>`;
 
