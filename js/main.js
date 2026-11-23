@@ -223,7 +223,7 @@
         </div>
       </div>` : "";
     if (others.length) {
-      plates += `<div class="thumbs" style="--n:${Math.min(others.length, 6)}">` + others.map(({ im, n }) => {
+      plates += `<div class="thumbs" style="--n:${Math.ceil(others.length / Math.ceil(others.length / 6))}">` + others.map(({ im, n }) => {
         const pic = im.src ? `<img src="${esc(im.src)}" alt="${esc(im.caption || "")}" loading="lazy">` : media(im);
         return `<figure>${zoom(n, `<span class="thumb">${pic}</span>`)}${cap(im, n)}</figure>`;
       }).join("") + `</div>`;
