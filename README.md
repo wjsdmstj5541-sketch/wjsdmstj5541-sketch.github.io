@@ -5,7 +5,7 @@
 
 ## 페이지
 - `index.html` — 첫 페이지 (소개 + 메뉴 + 대표작 랜덤 1장)
-- `work.html` — 작업 목록 (Grid / List, `?field=news` 등 분야 필터)
+- `work.html` — 작업 목록 (Grid / List, `?field=portrait` · `?field=elsewhere` 분야 필터)
 - `project.html?id=01` — 프로젝트 상세
 - `notes.html` — 작업 노트 (밀착 인화 → 남긴 컷·버린 컷 → 사진집 순서 → 글). 내용은 data.js 의 NOTES
 - `about.html` — 소개 (이름 · 연락처 · 프로필 사진)

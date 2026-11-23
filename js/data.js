@@ -34,25 +34,45 @@ window.SITE = {
   ],
 
   workIntro: [
-    "현장에서 찍은 사진과, 찍은 사진을 고르고 다듬어 지면에 올린 작업을 함께 모았습니다.",
-    "<span class=\"mute\">A selection of photographs made in the field, alongside work on how those photographs are chosen, cropped and placed.</span>"
+    "인물 사진, 그리고 그 밖에 찍은 것들.",
+    "<span class=\"mute\">Portraits, and other things.</span>"
   ]
 };
 
 // 분야 — key 는 영문 소문자로 유지하세요
 window.FIELDS = {
-  news:        { en: "News",        ko: "보도" },
-  documentary: { en: "Documentary", ko: "다큐멘터리" },
-  portrait:    { en: "Portrait",    ko: "인물" }
+  portrait:  { en: "Portrait",  ko: "인물" },
+  elsewhere: { en: "Elsewhere", ko: "그 밖에" }
 };
 
 // 프로젝트 — 이 순서대로 Work 페이지에 놓입니다
 window.PROJECTS = [
   {
     id: "01",
+    title: "Portraits",
+    titleKr: "인물",
+    field: "portrait",
+    year: 2026,
+    date: "2026",
+    location: "Studio, Seoul",
+    role: "Photography",
+    publication: "개인 작업",
+    desc: [
+      "스튜디오에서 찍은 개인 인물 작업입니다.",
+      "<span class=\"mute\">Personal portrait work, made in the studio.</span>"
+    ],
+    images: [
+      { src: "images/portrait/portrait-01.jpg", ratio: "1599/2400", featured: true, caption: "검은 드레스, 뒷모습.", captionEn: "Black dress, from behind." },
+      { src: "images/portrait/portrait-03.jpg", ratio: "1122/1402", featured: true, caption: "분홍 가발.", captionEn: "Pink wig." },
+      { src: "images/portrait/portrait-04.jpg", ratio: "1714/2400", featured: true, caption: "흰 벽 앞에 선 사람.", captionEn: "Standing against a white wall." },
+      { src: "images/portrait/portrait-02.jpg", ratio: "1714/2400", featured: true, caption: "머리를 넘기는 순간.", captionEn: "Hair in motion." }
+    ]
+  },
+  {
+    id: "02",
     title: "Outside the National Assembly",
     titleKr: "국회 앞",
-    field: "news",
+    field: "elsewhere",
     year: 2024,
     date: "2024. 12.",
     location: "Yeouido, Seoul",
@@ -63,17 +83,17 @@ window.PROJECTS = [
       "<span class=\"mute\">December 2024. After the declaration of martial law, citizens gathered outside the National Assembly in Yeouido to call for the president's impeachment.</span>"
     ],
     images: [
-      { src: "images/news/assembly-01.jpg", ratio: "1714/2400", featured: true, caption: "국회의사당을 배경으로 깃발이 나부끼고 있다.", captionEn: "Flags fly in front of the National Assembly building." },
-      { src: "images/news/assembly-02.jpg", ratio: "2400/1714", featured: true, caption: "탄핵을 요구하는 손팻말을 든 시민이 국회 앞 도로를 걷고 있다.", captionEn: "A man carries placards calling for impeachment along the road outside the Assembly." },
+      { src: "images/news/assembly-01.jpg", ratio: "1714/2400", caption: "국회의사당을 배경으로 깃발이 나부끼고 있다.", captionEn: "Flags fly in front of the National Assembly building." },
+      { src: "images/news/assembly-02.jpg", ratio: "2400/1714", caption: "탄핵을 요구하는 손팻말을 든 시민이 국회 앞 도로를 걷고 있다.", captionEn: "A man carries placards calling for impeachment along the road outside the Assembly." },
       { src: "images/news/assembly-03.jpg", ratio: "1714/2400", caption: "바닥에 붙은 ‘윤석열 체포’ 전단.", captionEn: "Leaflets calling for the president's arrest, stuck to the pavement." },
       { src: "images/news/assembly-04.jpg", ratio: "2400/1714", caption: "발밑에 밟힌 손팻말과 신문.", captionEn: "Placards and newspapers underfoot." }
     ]
   },
   {
-    id: "02",
+    id: "03",
     title: "Hannam-dong",
     titleKr: "한남동 관저 앞",
-    field: "news",
+    field: "elsewhere",
     year: 2025,
     date: "2025. 1.",
     location: "Hannam-dong, Seoul",
@@ -84,16 +104,16 @@ window.PROJECTS = [
       "<span class=\"mute\">January 2025. Supporters of the president, carrying Korean and American flags, gathered in the low winter sun outside the presidential residence in Hannam-dong.</span>"
     ],
     images: [
-      { src: "images/news/hannam-01.jpg", ratio: "1714/2400", featured: true, caption: "태극기와 성조기를 든 지지자들이 관저 앞 거리를 걷고 있다.", captionEn: "Supporters carrying Korean and American flags walk outside the residence." },
-      { src: "images/news/hannam-02.jpg", ratio: "1714/2400", featured: true, caption: "손팻말을 든 집회 참가자들.", captionEn: "Rally participants holding placards." },
+      { src: "images/news/hannam-01.jpg", ratio: "1714/2400", caption: "태극기와 성조기를 든 지지자들이 관저 앞 거리를 걷고 있다.", captionEn: "Supporters carrying Korean and American flags walk outside the residence." },
+      { src: "images/news/hannam-02.jpg", ratio: "1714/2400", caption: "손팻말을 든 집회 참가자들.", captionEn: "Rally participants holding placards." },
       { src: "images/news/hannam-03.jpg", ratio: "1714/2400", caption: "햇빛을 받으며 구호를 외치는 참가자들.", captionEn: "Participants chant in the afternoon light." }
     ]
   },
   {
-    id: "03",
+    id: "04",
     title: "Olympic Handball Arena",
     titleKr: "올림픽 핸드볼경기장 앞",
-    field: "news",
+    field: "elsewhere",
     year: 2026,
     date: "2026. 6.",
     location: "Olympic Park, Seoul",
@@ -104,74 +124,10 @@ window.PROJECTS = [
       "<span class=\"mute\">June 2026. Outside the Handball Arena in Olympic Park, participants gathered with signs reading “Re-election” and “Stop the steal.”</span>"
     ],
     images: [
-      { src: "images/news/olympic-01.jpg", ratio: "1920/2400", featured: true, caption: "‘STOP THE STEAL! 재선거!’ 손팻말을 든 참가자.", captionEn: "A participant holds a sign reading “Stop the steal! Re-election!”" },
-      { src: "images/news/olympic-02.jpg", ratio: "1599/2400", featured: true, caption: "닫힌 셔터 앞, 양산 뒤에 앉은 참가자들.", captionEn: "Participants seated behind umbrellas in front of a closed shutter." },
+      { src: "images/news/olympic-01.jpg", ratio: "1920/2400", caption: "‘STOP THE STEAL! 재선거!’ 손팻말을 든 참가자.", captionEn: "A participant holds a sign reading “Stop the steal! Re-election!”" },
+      { src: "images/news/olympic-02.jpg", ratio: "1599/2400", caption: "닫힌 셔터 앞, 양산 뒤에 앉은 참가자들.", captionEn: "Participants seated behind umbrellas in front of a closed shutter." },
       { src: "images/news/olympic-03.jpg", ratio: "1598/2400", caption: "‘재선거’ 종이를 가슴에 건 참가자.", captionEn: "A participant wearing a “re-election” sign." },
       { src: "images/news/olympic-04.jpg", ratio: "1598/2400", caption: "계단을 메운 참가자들 앞에서 한 남성이 주먹을 들어 올리고 있다.", captionEn: "A man raises his fist in front of participants filling the steps." }
-    ]
-  },
-  {
-    id: "04",
-    title: "Night Shift",
-    titleKr: "야간 근무",
-    field: "documentary",
-    year: 2026,
-    date: "2026. 1.–3.",
-    location: "Seoul",
-    role: "Photography",
-    publication: "개인 작업",
-    desc: [
-      "[예시] 서울의 밤을 지키는 사람들을 석 달 동안 따라다녔습니다. 편의점, 택시, 응급실, 새벽 시장. 도시가 잠든 시간에만 보이는 노동의 리듬을 기록했습니다.",
-      "<span class=\"mute\">[Example] Three months with the people who keep Seoul running after midnight.</span>"
-    ],
-    images: [
-      { src: "", ratio: "4/5", tone: "#2b2b29", caption: "새벽 2시, 마포의 편의점", captionEn: "2 a.m., a convenience store in Mapo" },
-      { src: "", ratio: "3/2", tone: "#1d1e20", caption: "교대를 기다리는 택시 기사", captionEn: "A driver waiting for the shift change" },
-      { src: "", ratio: "16/9", tone: "#3c3b38", caption: "응급실 앞 대기실", captionEn: "Emergency room waiting area" },
-      { src: "", ratio: "2/3", tone: "#55534f", caption: "가락시장, 오전 4시", captionEn: "Garak Market, 4 a.m." },
-      { src: "", ratio: "3/2", tone: "#232322", caption: "퇴근길", captionEn: "Going home" }
-    ]
-  },
-  {
-    id: "05",
-    title: "Faces of the Market",
-    titleKr: "시장의 얼굴",
-    field: "portrait",
-    year: 2025,
-    date: "2025. 10.",
-    location: "Mangwon, Seoul",
-    role: "Photography, Interview",
-    publication: "개인 작업",
-    desc: [
-      "[예시] 망원시장에서 30년 넘게 장사해 온 상인 열두 명의 초상. 같은 거리, 같은 높이, 같은 빛으로 찍었습니다.",
-      "<span class=\"mute\">[Example] Twelve portraits of vendors who have worked at Mangwon Market for over thirty years.</span>"
-    ],
-    images: [
-      { src: "", ratio: "4/5", tone: "#d8d4cc", caption: "떡집 사장 김OO 씨", captionEn: "Kim, rice cake shop" },
-      { src: "", ratio: "4/5", tone: "#c9c4bb", caption: "생선가게 이OO 씨", captionEn: "Lee, fishmonger" },
-      { src: "", ratio: "4/5", tone: "#bdb8ae", caption: "채소가게 박OO 씨", captionEn: "Park, greengrocer" },
-      { src: "", ratio: "4/5", tone: "#e1ddd5", caption: "방앗간 최OO 씨", captionEn: "Choi, mill" }
-    ]
-  },
-  {
-    id: "06",
-    title: "Winter Coast",
-    titleKr: "겨울 해안",
-    field: "documentary",
-    year: 2025,
-    date: "2025. 1.",
-    location: "Gangneung",
-    role: "Photography",
-    publication: "개인 작업",
-    desc: [
-      "[예시] 관광객이 떠난 겨울 동해안. 문 닫은 횟집과 방파제, 남아 있는 사람들의 일상을 담았습니다.",
-      "<span class=\"mute\">[Example] The east coast in winter, after the tourists have gone.</span>"
-    ],
-    images: [
-      { src: "", ratio: "16/9", tone: "#a7a59f", caption: "주문진 방파제", captionEn: "Breakwater, Jumunjin" },
-      { src: "", ratio: "3/2", tone: "#bcbab4", caption: "문 닫은 횟집", captionEn: "A closed restaurant" },
-      { src: "", ratio: "2/3", tone: "#93918b", caption: "그물을 손질하는 어민", captionEn: "Mending nets" },
-      { src: "", ratio: "3/2", tone: "#cfccc5", caption: "해변의 오후", captionEn: "Afternoon on the beach" }
     ]
   }
 ];

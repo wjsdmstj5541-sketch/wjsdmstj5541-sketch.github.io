@@ -36,7 +36,7 @@
       <div class="r">${esc(S.edition)}<br>${S.year} — ${esc(S.base)}</div>
     </div>
     ${coverIm ? `<div class="photo">${pic(coverIm)}</div>` : ""}
-    <div class="cap">Photographer<br><span class="mute">사진가</span></div>`, false);
+    <div class="cap">Portraits, and other things<br><span class="mute">인물, 그리고 그 밖에</span></div>`, false);
 
   // 2. intro + contents
   add("intro", `
