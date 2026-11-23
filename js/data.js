@@ -62,6 +62,29 @@ window.FIELDS = {
 window.PROJECTS = [
   {
     id: "01",
+    title: "단절된 자유",
+    titleKr: "Disconnected Freedom",
+    field: "portrait",
+    year: 2025,
+    date: "2025. 6.",
+    location: "Studio, Seoul",
+    role: "Photography",
+    publication: "개인 작업 — 청(靑)",
+    desc: [
+      "[작업 설명이 들어갑니다.]",
+      "<span class=\"mute\">[English text]</span>"
+    ],
+    images: [
+      { src: "images/severed/severed-01.jpg", ratio: "1714/2400", caption: "" },
+      { src: "images/severed/severed-02.jpg", ratio: "1598/2400", caption: "" },
+      { src: "images/severed/severed-03.jpg", ratio: "1714/2400", caption: "" },
+      { src: "images/severed/severed-04.jpg", ratio: "1714/2400", caption: "" },
+      { src: "images/severed/severed-05.jpg", ratio: "1714/2400", caption: "" },
+      { src: "images/severed/severed-06.jpg", ratio: "2400/1714", caption: "" }
+    ]
+  },
+  {
+    id: "02",
     title: "Portraits",
     titleKr: "인물",
     field: "portrait",
@@ -82,7 +105,7 @@ window.PROJECTS = [
     ]
   },
   {
-    id: "02",
+    id: "03",
     title: "Outside the National Assembly",
     titleKr: "국회 앞",
     field: "other",
@@ -103,7 +126,7 @@ window.PROJECTS = [
     ]
   },
   {
-    id: "03",
+    id: "04",
     title: "Hannam-dong",
     titleKr: "한남동 관저 앞",
     field: "other",
@@ -123,7 +146,7 @@ window.PROJECTS = [
     ]
   },
   {
-    id: "04",
+    id: "05",
     title: "Olympic Handball Arena",
     titleKr: "올림픽 핸드볼경기장 앞",
     field: "other",
