@@ -203,7 +203,7 @@
       desc: p.desc
     });
 
-    const cap = (im, n) => `<figcaption><span class="num">${pad(n)}</span><span>${esc(im.caption)}${im.captionEn ? ` <span class="mute">${esc(im.captionEn)}</span>` : ""}<br><span class="mute">${credit(p, im)}</span></span></figcaption>`;
+    const cap = (im, n) => `<figcaption><span class="num">${pad(n)}</span><span>${esc(im.caption)}${im.captionEn ? ` <span class="mute">${esc(im.captionEn)}</span>` : ""}</span></figcaption>`;
     const fig = (im, n, col, extra = "") =>
       `<figure style="grid-column:${col}"><button class="zoom" data-i="${n - 1}" aria-label="크게 보기 ${pad(n)}">${media(im, pad(n))}</button>${extra}${cap(im, n)}</figure>`;
 
@@ -276,7 +276,7 @@
       $(".lb-title", lb).innerHTML = `${esc(p.title)} <span class="mute">${esc(p.titleKr)}</span>`;
       box.innerHTML = media(im, pad(cur + 1));
       $(".lb-count", lb).textContent = `${pad(cur + 1)} / ${pad(imgs.length)}`;
-      $(".lb-cap", lb).innerHTML = `<span>${esc(im.caption)}</span><span class="mute">${esc(im.captionEn || "")}</span><span class="mute">${credit(p, im)}</span>`;
+      $(".lb-cap", lb).innerHTML = `<span>${esc(im.caption)}</span><span class="mute">${esc(im.captionEn || "")}</span><span></span>`;
       fit();
     }
     function open(k) {
