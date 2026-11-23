@@ -163,10 +163,15 @@ figure figcaption { margin-top: 8px; }
 .preview.is-on { visibility: visible; }
 
 /* ---------- project ---------- */
-.plates { padding: 0 var(--pad); margin-top: clamp(56px, 7vw, 110px); }
+.plates { padding: 0 var(--pad); margin-top: clamp(28px, 3vw, 48px); }
 .plates figcaption { display: grid; grid-template-columns: 28px 1fr; max-width: 520px; }
 .plates .zoom { display: block; cursor: zoom-in; }
-.plate-hero { width: fit-content; max-width: 100%; margin: 0 auto; }
+.plate-top { display: flex; align-items: flex-start; gap: clamp(28px, 4vw, 64px); }
+.plate-hero { flex: 0 1 auto; max-width: 66%; }
+.plate-text { flex: 0 1 380px; }
+.plate-text p + p { margin-top: var(--line-h); }
+.plate-meta { display: grid; grid-template-columns: 90px 1fr; row-gap: 4px; margin-top: calc(var(--line-h) * 2); padding-top: 10px; border-top: 1px solid var(--line); }
+.plate-meta dt { color: var(--mute); }
 .plate-hero .media { width: auto; }
 .plate-hero .media img { max-height: calc(100vh - 140px); max-height: calc(100svh - 140px); width: auto; max-width: 100%; }
 .plate-hero figcaption { width: 100%; max-width: none; margin-top: 8px; }
@@ -223,6 +228,9 @@ figure figcaption { margin-top: 8px; }
   .work-grid > * { width: 82%; }
   .work-grid > :nth-child(even) { justify-self: end; }
   .thumbs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .plate-top { flex-direction: column; }
+  .plate-hero { max-width: 100%; }
+  .plate-text { flex-basis: auto; margin-top: calc(var(--line-h) * 2); }
 
   .work-list .row { grid-template-columns: 28px 1fr auto; }
   .work-list .row > :nth-child(1) { grid-column: 1 !important; }

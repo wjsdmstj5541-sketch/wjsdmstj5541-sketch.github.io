@@ -189,29 +189,39 @@
     const p = P[i], next = P[(i + 1) % P.length], fd = field(p.field);
     document.title = `${p.title} — ${S.name}`;
 
+    // header keeps only the path; the description and details sit beside the large photograph
     const head = mast({
       path: [["work", "work.html"], [p.field, `work.html?field=${p.field}`], [slug(p.title), ""]],
       title: esc(p.title),
       kr: esc(p.titleKr),
-      meta: [
-        ["Field", `${fd.en} <span class="mute">${fd.ko}</span>`],
-        ["Role", esc(p.role)],
-        ["Publication", esc(p.publication)],
-        ["Location", esc(p.location)],
-        ["Date", esc(p.date || p.year)]
-      ],
-      desc: p.desc
+      meta: []
     });
+    const meta = [
+      ["Field", `${fd.en} <span class="mute">${fd.ko}</span>`],
+      ["Role", esc(p.role)],
+      ["Publication", esc(p.publication)],
+      ["Location", esc(p.location)],
+      ["Date", esc(p.date || p.year)]
+    ].map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("");
 
     const cap = (im, n) => `<figcaption><span class="num">${pad(n)}</span><span>${esc(im.caption)}${im.captionEn ? ` <span class="mute">${esc(im.captionEn)}</span>` : ""}</span></figcaption>`;
-    // one large photograph on top, then the rest as equal-sized thumbnails in a row;
-    // clicking any of them opens the viewer at the photograph's real proportions
-    const [first, ...rest] = p.images;
     const zoom = (n, inner) => `<button class="zoom" data-i="${n - 1}" aria-label="크게 보기 ${pad(n)}">${inner}</button>`;
-    let plates = first ? `<figure class="plate-hero">${zoom(1, media(first, pad(1)))}${cap(first, 1)}</figure>` : "";
-    if (rest.length) {
-      plates += `<div class="thumbs" style="--n:${Math.min(rest.length, 6)}">` + rest.map((im, k) => {
-        const n = k + 2;
+
+    // large photograph on the left (data.js: hero = photo number, default 1), text on the right,
+    // then every other photograph as an equal-sized thumbnail; numbers stay as in data.js
+    const h = Math.min(Math.max((p.hero || 1) - 1, 0), p.images.length - 1);
+    const hero = p.images[h];
+    const others = p.images.map((im, k) => ({ im, n: k + 1 })).filter((x) => x.n - 1 !== h);
+
+    let plates = hero ? `<div class="plate-top">
+        <figure class="plate-hero">${zoom(h + 1, media(hero, pad(h + 1)))}${cap(hero, h + 1)}</figure>
+        <div class="plate-text">
+          <div class="label mute">Description</div>${paras(p.desc || [])}
+          <dl class="plate-meta">${meta}</dl>
+        </div>
+      </div>` : "";
+    if (others.length) {
+      plates += `<div class="thumbs" style="--n:${Math.min(others.length, 6)}">` + others.map(({ im, n }) => {
         const pic = im.src ? `<img src="${esc(im.src)}" alt="${esc(im.caption || "")}" loading="lazy">` : media(im);
         return `<figure>${zoom(n, `<span class="thumb">${pic}</span>`)}${cap(im, n)}</figure>`;
       }).join("") + `</div>`;
