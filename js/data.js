@@ -183,6 +183,31 @@ window.PROJECTS = [
   },
   {
     id: "06",
+    title: "Untitled",
+    titleKr: "무제",
+    field: "portrait",
+    year: 2026,
+    date: "2026. 10.",
+    location: "Studio, Seoul",
+    role: "Photography",
+    publication: "개인 작업",
+    desc: [
+      "[작업 설명이 들어갑니다.]",
+      "<span class=\"mute\">[English text]</span>"
+    ],
+    images: [
+      { src: "images/untitled-2/untitled2-01.jpg", ratio: "1714/2400", caption: "" },
+      { src: "images/untitled-2/untitled2-02.jpg", ratio: "1599/2400", caption: "" },
+      { src: "images/untitled-2/untitled2-03.jpg", ratio: "1714/2400", caption: "" },
+      { src: "images/untitled-2/untitled2-04.jpg", ratio: "2400/1919", caption: "" },
+      { src: "images/untitled-2/untitled2-05.jpg", ratio: "1714/2400", caption: "" },
+      { src: "images/untitled-2/untitled2-06.jpg", ratio: "1920/2400", caption: "" },
+      { src: "images/untitled-2/untitled2-07.jpg", ratio: "1714/2400", caption: "" },
+      { src: "images/untitled-2/untitled2-08.jpg", ratio: "2400/1350", caption: "" }
+    ]
+  },
+  {
+    id: "07",
     title: "Outside the National Assembly",
     titleKr: "국회 앞",
     field: "other",
@@ -203,7 +228,7 @@ window.PROJECTS = [
     ]
   },
   {
-    id: "07",
+    id: "08",
     title: "Hannam-dong",
     titleKr: "한남동 관저 앞",
     field: "other",
@@ -223,7 +248,7 @@ window.PROJECTS = [
     ]
   },
   {
-    id: "08",
+    id: "09",
     title: "Olympic Handball Arena",
     titleKr: "올림픽 핸드볼경기장 앞",
     field: "other",
