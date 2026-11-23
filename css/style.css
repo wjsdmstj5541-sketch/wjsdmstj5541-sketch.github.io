@@ -113,14 +113,13 @@ figure figcaption { margin-top: 8px; }
 /* ---------- masthead (title / meta / description) ---------- */
 .mast { padding: 0 var(--pad); margin-top: clamp(56px, 8vw, 120px); align-items: start; }
 .mast-title { grid-column: 1 / 5; }
-.path { color: var(--mute); margin-bottom: 22px; }
+.path { color: var(--mute); }
 .path a { color: var(--mute); }
 .path a:hover { color: var(--link); text-decoration: underline; text-underline-offset: 3px; }
 .path .sep { margin: 0 .45em; color: var(--line); }
 .path [aria-current] { color: var(--ink); }
-/* title kept small — the photographs carry the page */
-.mast-title h1 { font: inherit; }
-.mast-title .kr { display: block; color: var(--mute); }
+/* no visible title — the path above says where you are; h1 stays for screen readers */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .mast-meta { grid-column: 5 / 7; }
 .mast-meta dt { color: var(--mute); }
 .mast-meta dd + dt { margin-top: var(--line-h); }

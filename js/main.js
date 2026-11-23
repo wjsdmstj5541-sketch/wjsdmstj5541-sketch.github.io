@@ -62,7 +62,7 @@
     return `<section class="mast grid">
       <div class="mast-title">
         ${crumbs(path)}
-        <h1>${title}</h1>${kr ? `<span class="kr">${kr}</span>` : ""}
+        <h1 class="sr-only">${title}${kr ? ` ${kr}` : ""}</h1>
       </div>
       <dl class="mast-meta">${metaHtml}</dl>
       ${desc && desc.length ? `<div class="mast-desc"><span class="label">Description</span>${paras(desc)}</div>` : ""}${aside || ""}
