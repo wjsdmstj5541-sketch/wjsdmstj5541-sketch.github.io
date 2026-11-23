@@ -204,7 +204,8 @@ window.PROJECTS = [
       { src: "images/untitled-2/untitled2-05.jpg", ratio: "1714/2400", caption: "" },
       { src: "images/untitled-2/untitled2-06.jpg", ratio: "1920/2400", caption: "" },
       { src: "images/untitled-2/untitled2-07.jpg", ratio: "1714/2400", caption: "" },
-      { src: "images/untitled-2/untitled2-08.jpg", ratio: "2400/1350", caption: "" }
+      { src: "images/untitled-2/untitled2-08.jpg", ratio: "2400/1350", caption: "" },
+      { src: "images/untitled-2/untitled2-09.jpg", ratio: "2400/1714", caption: "" }
     ]
   },
   {
