@@ -71,7 +71,7 @@
     const groups = [
       ["Selected Work <span class=\"mute\">작업</span>", [["work.html", "Grid"], ["work.html?view=list", "List"]]],
       ["Fields <span class=\"mute\">분야</span>", Object.entries(F).map(([k, f]) => [`work.html?field=${k}`, `${f.en} <span class="mute">${f.ko}</span>`])],
-      ["Notes <span class=\"mute\">작업 노트</span>", [["notes.html#contact", "Contact Sheet"], ["notes.html#kept", "Kept & Left Out"], ["notes.html#sequence", "Sequence"], ["notes.html#text", "Text"]]],
+      ["Notes <span class=\"mute\">작업 노트</span>", (window.NOTES.entries || []).slice(0, 4).map((e, k) => [`notes.html#note-${k + 1}`, esc(e.title)])],
       ["About <span class=\"mute\">소개</span>", [["about.html", "Profile"], [`mailto:${S.email}`, "E-mail"], [`tel:${S.phone}`, S.phone], [S.instagram, "Instagram"]]]
     ];
     $("#home-nav").innerHTML =
@@ -297,65 +297,21 @@
   /* ---------------- Notes ---------------- */
   function notes() {
     const N = window.NOTES;
-    const p = P.find((x) => x.id === N.project) || P[0];
-    const tones = ["#4f4e4a", "#6b6964", "#3e3d3a", "#8c8984", "#5a5854", "#77746e", "#2f2f2d", "#9e9b95"];
-    // placeholder look for frame n (ignored once a real src is set in NOTES.photos)
-    const frame = (n) => Object.assign({ ratio: n % 4 === 0 ? "2/3" : "3/2", tone: tones[(n * 5) % tones.length] }, (N.photos || {})[n]);
-    const picks = new Set(N.selects);
-
+    const list = N.entries || [];
     const head = mast({
       title: N.title,
       kr: N.titleKr,
-      meta: [
-        ["Project", `<a href="${projectUrl(p)}">${esc(p.title)}</a> <span class="mute">${esc(p.titleKr)}</span>`],
-        ["Period", esc(p.date || p.year)],
-        ["Frames", `${N.shot.toLocaleString("en")} → ${N.selects.length}`]
-      ],
+      meta: [["Entries", `<span class="num">${pad(list.length)}</span>`]],
       desc: N.desc
     });
-
-    const stepHead = (n, [ko, en, text]) =>
-      `<div class="step-head"><div class="n num">${pad(n)}</div><div>${en} <span class="mute">${ko}</span></div><p>${text}</p></div>`;
-
-    const sheet = Array.from({ length: N.frames }, (_, k) => {
-      const n = k + 1, pick = picks.has(n);
-      return `<div class="frame${pick ? " is-pick" : ""}"><div class="cell">${media(frame(n))}</div><div class="fn num">${pad(n, 3)}${pick ? " ●" : ""}</div></div>`;
-    }).join("");
-
-    const tall = (n) => (ratioNum(frame(n).ratio) < 1 ? " tall" : "");
-    const pairs = N.pairs.map((pr) => `<div class="pair">
-        <figure class="kept${tall(pr.kept)}">${media(frame(pr.kept), pad(pr.kept, 3))}<figcaption>Kept <span class="mute">남긴 컷 ${pad(pr.kept, 3)}</span></figcaption></figure>
-        <figure class="left${tall(pr.left)}">${media(frame(pr.left), pad(pr.left, 3))}<figcaption class="mute">Left out 버린 컷 ${pad(pr.left, 3)}</figcaption></figure>
-        <p class="pair-note">${pr.note}</p>
-      </div>`).join("");
-
-    // book dummy: each spread = [left page, right page]; a page is null (blank), a frame number, or { n, bleed: true }
-    const page = (pg) => {
-      if (pg == null) return `<div class="pg"></div>`;
-      const n = typeof pg === "object" ? pg.n : pg;
-      const bleed = typeof pg === "object" && pg.bleed;
-      const im = frame(n);
-      return `<div class="pg${bleed ? " bleed" : ""}${ratioNum(im.ratio) < 1 ? " tall" : ""}">${media(im)}</div>`;
-    };
-    let pno = 0;
-    const flatplan = N.sequence.map((sp) => {
-      const a = ++pno, b = ++pno;
-      return `<div class="spread"><div class="pages">${page(sp[0])}${page(sp[1])}</div><div class="sp-n num">${pad(a)}–${pad(b)}</div></div>`;
-    }).join("");
-
-    const body = `
-      <section class="step grid" id="contact">${stepHead(1, N.steps.contact)}
-        <div class="step-body"><div class="sheet">${sheet}</div></div></section>
-
-      <section class="step grid" id="kept">${stepHead(2, N.steps.pairs)}
-        <div class="step-body">${pairs}</div></section>
-
-      <section class="step grid" id="sequence">${stepHead(3, N.steps.sequence)}
-        <div class="step-body"><div class="flatplan">${flatplan}</div></div></section>
-
-      <section class="step grid" id="text">${stepHead(4, N.steps.text)}
-        <div class="step-body essay">${paras(N.essay)}<p class="sign">${esc(S.name)}, ${esc(p.date || p.year)}</p></div></section>`;
-
+    const body = `<section class="notes">` + list.map((e, k) => `
+      <article class="note grid" id="note-${k + 1}">
+        <header class="note-head">
+          <div class="mute num">${pad(k + 1)} — ${esc(e.date)}</div>
+          <h2>${esc(e.title)}${e.titleEn ? `<br><span class="mute">${esc(e.titleEn)}</span>` : ""}</h2>
+        </header>
+        <div class="essay">${paras(e.body)}</div>
+      </article>`).join("") + `</section>`;
     shell("Notes", head + body);
   }
 

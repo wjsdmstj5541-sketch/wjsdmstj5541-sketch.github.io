@@ -132,47 +132,26 @@ window.PROJECTS = [
   }
 ];
 
-// Notes 페이지 — 한 프로젝트를 사진집으로 엮은 과정 [예시]
-// photos 에 프레임 번호별로 실제 사진을 넣을 수 있습니다.  예) 4: { src: "images/ns-004.jpg" }
+// Notes 페이지 — 글만 모아 두는 곳
+// entries 에 글을 하나씩 추가하세요. 위에 있는 글이 먼저 보입니다.
+//   date  : 날짜 (예: "2026. 11.")
+//   title : 제목,  titleEn : 영문 제목 (없으면 "")
+//   body  : 문단 배열. 영문 문단은 <span class="mute">…</span> 로 감싸면 회색으로 보입니다.
 window.NOTES = {
   title: "Notes",
   titleKr: "작업 노트",
-  project: "04",            // 어떤 프로젝트의 노트인지 (PROJECTS 의 id)
-  shot: 1240,               // 실제로 찍은 컷 수
-  frames: 36,               // 밀착 인화에 보여줄 컷 수
-  selects: [2, 4, 7, 11, 12, 16, 19, 22, 25, 28, 31, 35],
-  photos: {},
   desc: [
-    "[예시] 〈야간 근무〉를 찍은 석 달 동안 1,240컷이 남았습니다. 그중 열두 장을 골라 작은 사진집으로 엮었습니다. 무엇을 남기고 무엇을 버렸는지, 어떤 순서로 놓았는지를 적어둡니다.",
-    "<span class=\"mute\">[Example] Notes on turning 1,240 frames from Night Shift into a twelve-photograph book: what stayed, what was left out, and in what order.</span>"
+    "찍으면서 든 생각들을 적어 둡니다.",
+    "<span class=\"mute\">Thoughts written down while photographing.</span>"
   ],
-  steps: {
-    contact:  ["밀착 인화", "Contact Sheet", "[예시] 매일 밤 찍은 컷을 다음 날 아침에 훑어봅니다. 테두리가 있는 컷이 마지막까지 남은 열두 장입니다."],
-    pairs:    ["남긴 컷과 버린 컷", "Kept & Left Out", "[예시] 거의 같은 순간을 찍은 두 장 가운데 하나만 남겼습니다. 버린 컷이 더 잘 찍힌 경우도 있었습니다."],
-    sequence: ["순서", "Sequence", "[예시] 열두 장을 펼침면에 놓아 본 더미입니다. 빈 페이지는 쉬어 가는 자리입니다."],
-    text:     ["글", "Text", "[예시] 사진집 맨 뒤에 넣은 짧은 글입니다."]
-  },
-  pairs: [
-    { kept: 4,  left: 3,  note: "[예시] 초점은 왼쪽이 더 정확했지만, 남긴 컷에는 손님이 막 문을 나서는 순간의 빈자리가 있습니다." },
-    { kept: 16, left: 17, note: "[예시] 기사님이 카메라를 의식하기 직전의 한 장. 바로 다음 컷부터는 표정이 달라졌습니다." },
-    { kept: 28, left: 30, note: "[예시] 더 극적인 컷은 버렸습니다. 이 이야기에는 조용한 사진이 더 많이 필요했습니다." }
-  ],
-  // 펼침면 [왼쪽, 오른쪽] — null 은 빈 페이지, 숫자는 프레임 번호, { n, bleed: true } 는 페이지 가득
-  sequence: [
-    [null, 4],
-    [7, null],
-    [{ n: 11, bleed: true }, 12],
-    [null, 16],
-    [19, 22],
-    [{ n: 25, bleed: true }, null],
-    [28, 2],
-    [null, 31],
-    [35, null]
-  ],
-  essay: [
-    "[예시] 자정이 넘으면 도시의 소리가 바뀝니다. 차 소리가 줄고, 냉장고 돌아가는 소리와 형광등 소리가 들리기 시작합니다. 석 달 동안 그 소리를 따라다녔습니다.",
-    "[예시] 처음에는 일하는 사람들을 찍으려 했습니다. 그런데 찍을수록 사람보다 사람이 잠깐 비운 자리에 눈이 갔습니다. 계산대 위에 놓인 컵, 시동이 걸린 채 서 있는 택시, 아무도 앉지 않은 대기실 의자.",
-    "[예시] 이 책은 그 빈자리에 대한 기록입니다.",
-    "<span class=\"mute\">[Example] After midnight the city changes its sound. For three months I followed it, and found myself photographing the places people had just left.</span>"
+  entries: [
+    {
+      date: "2026. 11.",
+      title: "마음에, 모험을",
+      titleEn: "Adventure, at heart",
+      body: [
+        "[여기에 글이 들어갑니다. js/data.js 의 NOTES.entries 에서 고칠 수 있어요.]"
+      ]
+    }
   ]
 };
