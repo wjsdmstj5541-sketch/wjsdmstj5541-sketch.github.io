@@ -29,7 +29,8 @@ window.SITE = {
 
   // 첫 페이지 소개 문단 (HTML 사용 가능)
   intro: [
-    "마음에, 모험을"
+    "마음에, 모험을",
+    "<span class=\"mute\">Adventure, at heart.</span>"
   ],
 
   workIntro: [
