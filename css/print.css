@@ -96,14 +96,12 @@ ul { list-style: none; }
   display: grid; grid-template-columns: 8mm 1fr;
 }
 
-/* about / cv */
-.about .bio { grid-column: 1 / 5; }
-.about .bio p + p { margin-top: 3mm; }
-.about .cv { grid-column: 6 / 13; columns: 2; column-gap: 8mm; }
-.about .sec { break-inside: avoid; padding-top: 2mm; border-top: .25mm solid var(--line); margin-bottom: 6mm; }
-.about .sec h2 { font-size: inherit; font-weight: 400; margin-bottom: 2mm; }
-.about .sec li { display: grid; grid-template-columns: 18mm 1fr; column-gap: 3mm; }
-.about .sec li + li { margin-top: 1.4mm; }
+/* about */
+.about .g { align-items: start; }
+.about .info { align-content: start; grid-column: 1 / 5; display: grid; grid-template-columns: 22mm 1fr; row-gap: 2mm; }
+.about .info dt { color: var(--mute); }
+.about .me { grid-column: 8 / 11; }
+.about .me img { display: block; width: 100%; height: auto; max-height: 140mm; object-fit: contain; object-position: left top; }
 
 /* back */
 .back .center { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); text-align: center; }

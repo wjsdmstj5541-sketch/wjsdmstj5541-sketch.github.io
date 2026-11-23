@@ -46,7 +46,7 @@
       <div class="contents">
         <div class="h">Contents <span>목차</span></div>
         <ul>${projects.map((p, i) => `<li><span class="num">${esc(p.id)}</span><span>${esc(p.title)} <span class="mute">${esc(p.titleKr)}</span></span><span class="mute">${field(p.field).en}, ${p.year}</span><span class="num">${pad(start[i])}</span></li>`).join("")}
-        <li><span></span><span>About <span class="mute">소개 · 약력</span></span><span></span><span class="num">${pad(n + 1)}</span></li></ul>
+        <li><span></span><span>About <span class="mute">소개</span></span><span></span><span class="num">${pad(n + 1)}</span></li></ul>
       </div>
     </div>`);
 
@@ -77,20 +77,25 @@
     });
   });
 
-  // 4. about + cv
+  // 4. about — simple profile
   add("about", `
-    <div class="page-label">About <span class="mute">소개 · 약력</span></div>
+    <div class="page-label">About <span class="mute">소개</span></div>
     <div class="g">
-      <div class="bio">${paras(S.about)}</div>
-      <div class="cv">${S.cv.map((sec) => `<div class="sec"><h2>${esc(sec.en)} <span class="mute">${esc(sec.ko)}</span></h2>
-        <ul>${sec.items.map(([y, ko, en]) => `<li><span class="mute">${esc(y)}</span><span>${esc(ko)}${en ? `<br><span class="mute">${esc(en)}</span>` : ""}</span></li>`).join("")}</ul></div>`).join("")}</div>
+      <dl class="info">
+        <dt>Name</dt><dd>${esc(S.realNameKr)} ${esc(S.realName)}<br><span class="mute">${esc(S.name)}</span></dd>
+        <dt>Based in</dt><dd>${esc(S.base)}</dd>
+        <dt>Phone</dt><dd>${esc(S.phone)}</dd>
+        <dt>E-mail</dt><dd>${esc(S.email)}</dd>
+        <dt>Instagram</dt><dd>${esc(S.instagramHandle)}</dd>
+      </dl>
+      ${S.photo ? `<figure class="me"><img src="${esc(S.photo)}" alt=""></figure>` : ""}
     </div>`);
 
   // 5. back cover
   add("back", `
     <div class="center">
       <div class="name">${esc(S.name)}</div>
-      ${esc(S.email)}<br>${esc(S.instagramHandle)}<br><span class="mute">${esc(S.base)}</span>
+      ${esc(S.email)}<br>${esc(S.phone)}<br>${esc(S.instagramHandle)}<br><span class="mute">${esc(S.base)}</span>
     </div>`, false);
 
   document.getElementById("book").innerHTML = sheets.join("");

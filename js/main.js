@@ -48,7 +48,7 @@
     </footer>`;
   }
 
-  function mast({ arrow, title, kr, meta, desc }) {
+  function mast({ arrow, title, kr, meta, desc, aside }) {
     const metaHtml = meta.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("");
     return `<section class="mast grid">
       <div class="mast-title">
@@ -56,7 +56,7 @@
         <h1>${title}</h1>${kr ? `<span class="kr">${kr}</span>` : ""}
       </div>
       <dl class="mast-meta">${metaHtml}</dl>
-      <div class="mast-desc"><span class="label">Description</span>${paras(desc)}</div>
+      ${desc && desc.length ? `<div class="mast-desc"><span class="label">Description</span>${paras(desc)}</div>` : ""}${aside || ""}
     </section>`;
   }
 
@@ -72,7 +72,7 @@
       ["Selected Work <span class=\"mute\">작업</span>", [["work.html", "Grid"], ["work.html?view=list", "List"]]],
       ["Fields <span class=\"mute\">분야</span>", Object.entries(F).map(([k, f]) => [`work.html?field=${k}`, `${f.en} <span class="mute">${f.ko}</span>`])],
       ["Notes <span class=\"mute\">작업 노트</span>", [["notes.html#contact", "Contact Sheet"], ["notes.html#kept", "Kept & Left Out"], ["notes.html#sequence", "Sequence"], ["notes.html#text", "Text"]]],
-      ["About <span class=\"mute\">소개</span>", [["about.html", "CV"], [`mailto:${S.email}`, "E-mail"], [S.instagram, "Instagram"]]]
+      ["About <span class=\"mute\">소개</span>", [["about.html", "Profile"], [`mailto:${S.email}`, "E-mail"], [`tel:${S.phone}`, S.phone], [S.instagram, "Instagram"]]]
     ];
     $("#home-nav").innerHTML =
       groups.map(([h, links]) => `<div class="group"><div>${h}</div><ul>${links.map(([u, t]) => `<li><a href="${esc(u)}">${t}</a></li>`).join("")}</ul></div>`).join("") +
@@ -363,25 +363,18 @@
   function about() {
     const head = mast({
       title: "About",
-      kr: `${esc(S.nameKr)} · ${esc(S.realNameKr)}`,
+      kr: `${esc(S.realNameKr)} · ${esc(S.nameKr)}`,
       meta: [
-        ["Name", `${esc(S.name)}<br>${esc(S.realName)}`],
+        ["Name", `${esc(S.realNameKr)} ${esc(S.realName)}<br><span class="mute">${esc(S.name)}</span>`],
         ["Based in", esc(S.base)],
+        ["Phone", `<a href="tel:${esc(S.phone)}">${esc(S.phone)}</a>`],
         ["E-mail", `<a href="mailto:${esc(S.email)}">${esc(S.email)}</a>`],
         ["Instagram", `<a href="${esc(S.instagram)}" target="_blank" rel="noopener">${esc(S.instagramHandle)}</a>`]
       ],
-      desc: S.about
+      aside: S.photo ? `<figure class="portrait">${media({ src: S.photo, alt: `${S.realNameKr} 프로필 사진` })}</figure>` : ""
     });
 
-    const portrait = `<section class="grid" style="padding:0 var(--pad);margin-top:clamp(60px,8vw,120px)">
-      <figure class="portrait">${media({ ratio: "3/4", tone: "#e4e0d8" }, "Portrait")}<figcaption class="mute">Portrait (예시)</figcaption></figure></section>`;
-
-    const cv = `<section class="cv">` + S.cv.map((sec) => `<div class="cv-sec grid">
-      <h2>${esc(sec.en)}<span class="mute">${esc(sec.ko)}</span></h2>
-      <ul>${sec.items.map(([y, ko, en]) => `<li><span class="yr">${esc(y)}</span><span>${esc(ko)}${en ? `<br><span class="mute">${esc(en)}</span>` : ""}</span></li>`).join("")}</ul>
-    </div>`).join("") + `</section>`;
-
-    shell("About", head + portrait + cv);
+    shell("About", head);
   }
 
   const pages = { home, work, project, notes, about };

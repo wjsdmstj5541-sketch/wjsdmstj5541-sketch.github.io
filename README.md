@@ -8,7 +8,7 @@
 - `work.html` — 작업 목록 (Grid / List, `?field=news` 등 분야 필터)
 - `project.html?id=01` — 프로젝트 상세
 - `notes.html` — 작업 노트 (밀착 인화 → 남긴 컷·버린 컷 → 사진집 순서 → 글). 내용은 data.js 의 NOTES
-- `about.html` — 소개 / CV
+- `about.html` — 소개 (이름 · 연락처 · 프로필 사진)
 
 ## 내용 바꾸기
 모든 문구와 사진 경로는 `js/data.js` 한 파일에 있습니다. 지금 들어있는 내용은 모두 예시입니다.

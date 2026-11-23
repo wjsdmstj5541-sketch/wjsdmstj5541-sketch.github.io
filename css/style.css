@@ -218,15 +218,7 @@ figure figcaption { margin-top: 8px; }
 .essay .sign { font-size: var(--fs); color: var(--mute); margin-top: 2.4em; }
 
 /* ---------- about ---------- */
-.portrait { grid-column: 9 / 11; }
-.cv { padding: 0 var(--pad); margin-top: clamp(90px, 11vw, 170px); }
-.cv-sec { padding: 9px 0 calc(var(--line-h) * 2); border-top: 1px solid var(--line); align-items: start; }
-.cv-sec h2 { grid-column: 1 / 5; font-size: inherit; font-weight: 400; }
-.cv-sec h2 .mute { margin-left: 6px; }
-.cv-sec ul { grid-column: 5 / 13; }
-.cv-sec li { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 6fr); column-gap: var(--pad); }
-.cv-sec li + li { margin-top: 4px; }
-.cv-sec li .yr { color: var(--mute); font-variant-numeric: tabular-nums; }
+.portrait { grid-column: 9 / 12; }
 
 /* ---------- small screens ---------- */
 @media (max-width: 820px) {
@@ -267,7 +259,6 @@ figure figcaption { margin-top: 8px; }
   .flatplan { grid-template-columns: 1fr; gap: 28px; }
   .essay { font-size: 14px; }
   .portrait { width: 50%; margin-top: calc(var(--line-h) * 2); }
-  .cv-sec { row-gap: 8px; }
 }
 
 /* ---------- zoom + lightbox ---------- */

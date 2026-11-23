@@ -18,9 +18,11 @@ window.SITE = {
   nameKr: "서하루",
   realName: "Eunseo Jeon",
   realNameKr: "전은서",
-  email: "hello@seoharu.com",               // [예시]
-  instagram: "https://instagram.com/",       // [예시]
-  instagramHandle: "@seoharu",               // [예시]
+  email: "yoyo321321eun@naver.com",
+  phone: "010-5541-0357",
+  instagram: "https://www.instagram.com/haaaaaaaaaaaaaaaaaaaaaaaaaaaru/",
+  instagramHandle: "@haaaaaaaaaaaaaaaaaaaaaaaaaaaru",
+  photo: "images/profile.jpg",              // About 페이지 프로필 사진
   base: "Seoul, KR",
   edition: "Portfolio Vol. 01",
   year: 2026,
@@ -34,37 +36,6 @@ window.SITE = {
   workIntro: [
     "현장에서 찍은 사진과, 찍은 사진을 고르고 다듬어 지면에 올린 작업을 함께 모았습니다.",
     "<span class=\"mute\">A selection of photographs made in the field, alongside work on how those photographs are chosen, cropped and placed.</span>"
-  ],
-
-  about: [
-    "[예시] 서울에서 사진을 공부했고, 지역 일간지 사진부 인턴과 온라인 매체의 이미지 에디터로 일했습니다. 사건의 한가운데보다 그 주변에 남은 사람들의 얼굴과 손에 오래 머무는 편입니다.",
-    "[예시] 마감 안에서 수백 장 가운데 한 장을 고르는 일, 그리고 그 한 장이 기사와 제목 옆에서 정확하게 읽히도록 다듬는 일을 좋아합니다.",
-    "<span class=\"mute\">[Example] Studied photography in Seoul and has worked as a photo desk intern at a regional daily and as an image editor for an online publication.</span>"
-  ],
-
-  cv: [
-    { en: "Education", ko: "학력", items: [
-      ["2022 — 2026", "OO대학교 사진영상학과 졸업", "B.F.A. Photography, OO University"]
-    ]},
-    { en: "Experience", ko: "경력", items: [
-      ["2026", "OO일보 사진부 인턴", "Photo desk intern, OO Daily"],
-      ["2025", "OO매거진 온라인팀 이미지 에디터 (계약)", "Image editor, online, OO Magazine"],
-      ["2024 — 2025", "교내 신문사 사진기자", "Staff photographer, university newspaper"]
-    ]},
-    { en: "Awards & Exhibitions", ko: "수상 · 전시", items: [
-      ["2025", "OO 보도사진 공모전 입선", "Selected, OO Press Photo Award"],
-      ["2025", "단체전 〈겨울 해안〉, 서울", "Group show, Winter Coast, Seoul"]
-    ]},
-    { en: "Publications", ko: "게재", items: [
-      ["2026", "OO일보 1면 사진 게재 외 24건", "Front page, OO Daily, and 24 others"],
-      ["2025", "OO매거진 인물 화보 3건", "Three portrait features, OO Magazine"]
-    ]},
-    { en: "Skills", ko: "역량", items: [
-      ["Editing", "Photo Mechanic, Adobe Lightroom, Photoshop, Capture One", ""],
-      ["Workflow", "IPTC 캡션 작성, 마감 셀렉, 지면·온라인 크롭, CMS 업로드", "IPTC captioning, deadline selection, print/web cropping, CMS"],
-      ["Equipment", "Sony α7 IV, 24–70mm, 70–200mm, 35mm", ""],
-      ["Language", "한국어 (모국어), 영어 (업무 가능)", "Korean (native), English (professional)"]
-    ]}
   ]
 };
 
