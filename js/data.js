@@ -159,6 +159,29 @@ window.PROJECTS = [
   },
   {
     id: "05",
+    title: "추의 미학",
+    titleKr: "Aesthetics of Ugliness",
+    field: "portrait",
+    year: 2025,
+    date: "2025. 3.",
+    location: "Studio, Seoul",
+    role: "Photography",
+    publication: "개인 작업 — 공모전 출품",
+    desc: [
+      "[작업 설명이 들어갑니다.]",
+      "<span class=\"mute\">[English text]</span>"
+    ],
+    images: [
+      { src: "images/ugliness/ugliness-01.jpg", ratio: "1713/2400", caption: "" },
+      { src: "images/ugliness/ugliness-02.jpg", ratio: "1599/2400", caption: "" },
+      { src: "images/ugliness/ugliness-03.jpg", ratio: "1714/2400", caption: "" },
+      { src: "images/ugliness/ugliness-04.jpg", ratio: "1714/2400", caption: "" },
+      { src: "images/ugliness/ugliness-05.jpg", ratio: "1598/2400", caption: "" },
+      { src: "images/ugliness/ugliness-06.jpg", ratio: "1599/2400", caption: "" }
+    ]
+  },
+  {
+    id: "06",
     title: "Outside the National Assembly",
     titleKr: "국회 앞",
     field: "other",
@@ -179,7 +202,7 @@ window.PROJECTS = [
     ]
   },
   {
-    id: "06",
+    id: "07",
     title: "Hannam-dong",
     titleKr: "한남동 관저 앞",
     field: "other",
@@ -199,7 +222,7 @@ window.PROJECTS = [
     ]
   },
   {
-    id: "07",
+    id: "08",
     title: "Olympic Handball Arena",
     titleKr: "올림픽 핸드볼경기장 앞",
     field: "other",
