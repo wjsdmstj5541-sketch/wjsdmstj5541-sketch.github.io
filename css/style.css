@@ -166,7 +166,7 @@ figure figcaption { margin-top: 8px; }
 .plates {
   padding: 0 var(--pad);
   margin-top: clamp(56px, 7vw, 110px);
-  row-gap: clamp(90px, 12vw, 200px);
+  row-gap: clamp(40px, 5vw, 80px);
   align-items: start;
 }
 .plates figcaption { display: grid; grid-template-columns: 28px 1fr; max-width: 520px; }
