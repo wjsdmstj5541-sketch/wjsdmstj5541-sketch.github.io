@@ -206,7 +206,8 @@
       ["Date", esc(p.date || p.year)]
     ].map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("");
 
-    const cap = (im, n) => `<figcaption><span class="num">${pad(n)}</span><span>${esc(im.caption)}${im.captionEn ? ` <span class="mute">${esc(im.captionEn)}</span>` : ""}</span></figcaption>`;
+    // no numbers under photos; a caption appears only if one is written in data.js (lightbox still shows 01 / 09)
+    const cap = (im) => im.caption ? `<figcaption>${esc(im.caption)}${im.captionEn ? ` <span class="mute">${esc(im.captionEn)}</span>` : ""}</figcaption>` : "";
     const zoom = (n, inner) => `<button class="zoom" data-i="${n - 1}" aria-label="크게 보기 ${pad(n)}">${inner}</button>`;
 
     // one centred column, every photograph the same width (own height):
@@ -214,7 +215,7 @@
     // Numbers follow the order shown: hero = 01.
     const h = Math.min(Math.max((p.hero || 1) - 1, 0), p.images.length - 1);
     const shown = [p.images[h]].concat(p.images.filter((_, k) => k !== h));
-    const fig = (im, n) => `<figure>${zoom(n, media(im, pad(n)))}${cap(im, n)}</figure>`;
+    const fig = (im, n) => `<figure>${zoom(n, media(im, pad(n)))}${cap(im)}</figure>`;
     const text = `<div class="sheet-text">
         <div><div class="label mute">Description</div>${paras(p.desc || [])}</div>
         <dl class="plate-meta">${meta}</dl>
