@@ -96,8 +96,8 @@ window.PROJECTS = [
     publication: "개인 작업",
     hero: 2,                      // 크게 보여줄 사진 번호
     desc: [
-      "[작업 설명이 들어갑니다.]",
-      "<span class=\"mute\">[English text]</span>"
+      "자기 자신을 향한 왜곡된 사랑과 집착을 시각화한 작업이다. 진주는 과도한 자기 치장과 완벽에 대한 강박을, 곰팡이와 부패한 사물은 그 이면의 내적 붕괴를 상징한다. 외면의 아름다움과 내면의 부패를 대비시켜 자기애의 모순을 표현했다.",
+      "<span class=\"mute\">A visualisation of a distorted love for, and obsession with, the self. Pearls stand for excessive self-adornment and the compulsion to be perfect; mould and decaying objects for the inner collapse beneath. Setting outer beauty against inner decay, the work expresses the contradiction of self-love.</span>"
     ],
     images: [
       { src: "images/narcissism/narcissism-01.jpg", ratio: "2400/1500", caption: "" },
