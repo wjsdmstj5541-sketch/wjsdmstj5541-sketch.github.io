@@ -258,6 +258,29 @@ window.PROJECTS = [
   },
   {
     id: "09",
+    title: "청",
+    titleKr: "Cheong",
+    field: "portrait",
+    year: 2026,
+    date: "2026. 4.",
+    location: "Studio, Seoul",
+    role: "Photography",
+    publication: "개인 작업",
+    desc: [
+      "[작업 설명이 들어갑니다.]",
+      "<span class=\"mute\">[English text]</span>"
+    ],
+    images: [
+      { src: "images/cheong/cheong-01.jpg", ratio: "1901/2400", caption: "" },
+      { src: "images/cheong/cheong-02.jpg", ratio: "1920/2400", caption: "" },
+      { src: "images/cheong/cheong-03.jpg", ratio: "1920/2400", caption: "" },
+      { src: "images/cheong/cheong-04.jpg", ratio: "1599/2400", caption: "" },
+      { src: "images/cheong/cheong-05.jpg", ratio: "1779/2400", caption: "" },
+      { src: "images/cheong/cheong-06.jpg", ratio: "1920/2400", caption: "" }
+    ]
+  },
+  {
+    id: "10",
     title: "Outside the National Assembly",
     titleKr: "국회 앞",
     field: "other",
@@ -278,7 +301,7 @@ window.PROJECTS = [
     ]
   },
   {
-    id: "10",
+    id: "11",
     title: "Hannam-dong",
     titleKr: "한남동 관저 앞",
     field: "other",
@@ -298,7 +321,7 @@ window.PROJECTS = [
     ]
   },
   {
-    id: "11",
+    id: "12",
     title: "Olympic Handball Arena",
     titleKr: "올림픽 핸드볼경기장 앞",
     field: "other",
