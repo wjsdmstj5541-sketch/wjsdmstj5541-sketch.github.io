@@ -58,14 +58,17 @@
     ).join(`<span class="sep">/</span>`) + `</nav>`;
   }
 
-  function mast({ path = [], title, kr, meta, desc, aside }) {
+  // path on top; optional controls (opts: [[label, html]]) in one line right under it
+  function mast({ path = [], title, kr, meta = [], opts = [], desc, aside }) {
     const metaHtml = meta.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("");
+    const optsHtml = opts.length ? `<div class="mast-opts">${opts.map(([k, v]) => `<span><span class="k">${k}</span>${v}</span>`).join("")}</div>` : "";
     return `<section class="mast grid">
       <div class="mast-title">
         ${crumbs(path)}
         <h1 class="sr-only">${title}${kr ? ` ${kr}` : ""}</h1>
+        ${optsHtml}
       </div>
-      <dl class="mast-meta">${metaHtml}</dl>
+      ${metaHtml ? `<dl class="mast-meta">${metaHtml}</dl>` : ""}
       ${desc && desc.length ? `<div class="mast-desc"><span class="label">Description</span>${paras(desc)}</div>` : ""}${aside || ""}
     </section>`;
   }
@@ -127,7 +130,7 @@
     const fieldOpts = `<span class="opts">` +
       (view === "list" ? [] : [`<a href="${url(view, "")}"${on(!f)}>Intro</a>`])
         .concat(Object.entries(F).map(([k, v]) => `<a href="${url(view, k)}"${on(f === k)}>${v.en} (${P.filter((p) => p.field === k).length})</a>`))
-        .join("<br>") + `</span>`;
+        .join(", ") + `</span>`;
 
     // no field + grid = Intro: a short introduction to my photographs
     const intro = view === "grid" && !f;
@@ -137,14 +140,15 @@
       path: [["work", "work.html"], [view === "list" ? (f ? `list / ${f}` : "list") : f || "intro", ""]],
       title: intro ? esc(AI.title) : f ? field(f).en : "Selected Work",
       kr: intro ? esc(AI.titleKr) : f ? field(f).ko : "작업",
-      meta: [["View", viewOpts], ["Field", fieldOpts]],
-      desc: intro ? AI.text : S.workIntro
+      opts: [["View", viewOpts], ["Field", fieldOpts]]
     });
 
     let body;
     if (intro) {
-      const pics = (AI.photos || []).slice(0, 2).map((src) => `<figure>${media({ src })}</figure>`).join("");
-      body = pics ? `<section class="intro-photos grid">${pics}</section>` : "";
+      // same layout as a project page: photograph left, description right
+      const src = (AI.photos || [])[0];
+      const text = AI.text && AI.text.length ? `<div class="plate-text"><div class="label mute">Description</div>${paras(AI.text)}</div>` : "";
+      body = `<section class="plates intro"><div class="plate-top">${src ? `<figure class="plate-hero">${media({ src })}</figure>` : ""}${text}</div></section>`;
     } else if (view === "grid") {
       const slots = [
         { c: "1 / 6", t: 0 }, { c: "8 / 13", t: 9 },
