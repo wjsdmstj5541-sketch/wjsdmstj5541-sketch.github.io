@@ -168,11 +168,12 @@ window.PROJECTS = [
     date: "2025. 3.",
     location: "Studio, Seoul",
     role: "Photography",
+    credits: [["Director", "Luciysuu"]],
     publication: "개인 작업 — 공모전 출품",
     hero: 6,                      // 크게 보여줄 사진 번호
     desc: [
-      "[작업 설명이 들어갑니다.]",
-      "<span class=\"mute\">[English text]</span>"
+      "기존의 미적 기준에서 배제된 형태와 불완전함을 탐구한 작업이다. 인간의 신체를 조각적 오브제로 바라보고, 비정형적인 자세와 낯선 질감을 통해 아름다움과 추함의 경계에 질문을 던진다.",
+      "<span class=\"mute\">A study of the forms and imperfections left out of conventional standards of beauty. Treating the human body as a sculptural object, the work questions the line between beauty and ugliness through irregular poses and unfamiliar textures.</span>"
     ],
     images: [
       { src: "images/ugliness/ugliness-01.jpg", ratio: "1713/2400", caption: "" },

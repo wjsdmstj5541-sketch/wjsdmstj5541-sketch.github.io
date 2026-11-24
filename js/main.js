@@ -204,6 +204,8 @@
     const meta = [
       ["Field", `${fd.en} <span class="mute">${fd.ko}</span>`],
       ["Role", esc(p.role)],
+      // extra credits from data.js, e.g. credits: [["Director", "Name"]]
+      ...(p.credits || []).map(([k, v]) => [esc(k), esc(v)]),
       ["Publication", esc(p.publication)],
       ["Location", esc(p.location)],
       ["Date", esc(p.date || p.year)]
