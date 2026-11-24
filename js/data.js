@@ -396,6 +396,27 @@ window.PROJECTS = [
   },
   {
     id: "14",
+    title: "몸",
+    titleKr: "Body",
+    field: "portrait",
+    year: 2025,
+    date: "2025. 12.",
+    location: "Studio, Seoul",
+    role: "Photography",
+    publication: "개인 작업",
+    desc: [
+      "[작업 설명이 들어갑니다.]",
+      "<span class=\"mute\">[English text]</span>"
+    ],
+    images: [
+      { src: "images/body/body-01.jpg", ratio: "1714/2400", caption: "" },
+      { src: "images/body/body-02.jpg", ratio: "1714/2400", caption: "" },
+      { src: "images/body/body-03.jpg", ratio: "1714/2400", caption: "" },
+      { src: "images/body/body-04.jpg", ratio: "2400/1714", caption: "" }
+    ]
+  },
+  {
+    id: "15",
     title: "Outside the National Assembly",
     titleKr: "국회 앞",
     field: "other",
@@ -416,7 +437,7 @@ window.PROJECTS = [
     ]
   },
   {
-    id: "15",
+    id: "16",
     title: "Hannam-dong",
     titleKr: "한남동 관저 앞",
     field: "other",
@@ -436,7 +457,7 @@ window.PROJECTS = [
     ]
   },
   {
-    id: "16",
+    id: "17",
     title: "Olympic Handball Arena",
     titleKr: "올림픽 핸드볼경기장 앞",
     field: "other",
