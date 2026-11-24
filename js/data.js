@@ -454,8 +454,8 @@ window.PROJECTS = [
     role: "Photography",
     publication: "개인 작업",
     desc: [
-      "2024년 12월, 비상계엄 선포 이후 대통령 탄핵을 요구하는 시민들이 여의도 국회 앞에 모였습니다. 깃발과 손팻말, 그리고 집회가 지나간 바닥에 남은 것들을 찍었습니다.",
-      "<span class=\"mute\">December 2024. After the declaration of martial law, citizens gathered outside the National Assembly in Yeouido to call for the president's impeachment.</span>"
+      "2024년 12월, 비상계엄 선포 이후 서울 여의도 국회 앞에서 대통령 탄핵 촉구 집회가 열렸다.",
+      "<span class=\"mute\">December 2024 — A rally calling for the president’s impeachment was held outside the National Assembly in Yeouido, Seoul, following the declaration of martial law.</span>"
     ],
     images: [
       { src: "images/news/assembly-01.jpg", ratio: "1714/2400", caption: "국회의사당을 배경으로 깃발이 나부끼고 있다.", captionEn: "Flags fly in front of the National Assembly building." },
