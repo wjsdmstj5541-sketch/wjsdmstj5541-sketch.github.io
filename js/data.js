@@ -136,8 +136,8 @@ window.PROJECTS = [
   },
   {
     id: "04",
-    title: "Profile",
-    titleKr: "프로필",
+    title: "희정",
+    titleKr: "Heejeong",
     field: "portrait",
     year: 2026,
     date: "2026. 6.",
@@ -146,8 +146,8 @@ window.PROJECTS = [
     publication: "프로필 촬영",
     hero: 6,                      // 크게 보여줄 사진 번호
     desc: [
-      "[작업 설명이 들어갑니다.]",
-      "<span class=\"mute\">[English text]</span>"
+      "희정님을 대학 때 과제로 처음 뵙고, 시간이 흘러 어느새 긴 인연이 되었다.",
+      "<span class=\"mute\">I first met Heejeong for a university assignment; time passed, and before I knew it, it had become a long connection.</span>"
     ],
     images: [
       { src: "images/profile-series/profile-01.jpg", ratio: "1599/2400", caption: "" },
