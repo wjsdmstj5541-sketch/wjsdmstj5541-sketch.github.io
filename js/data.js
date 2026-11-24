@@ -289,14 +289,14 @@ window.PROJECTS = [
   {
     id: "11",
     title: "수경",
-    titleKr: "Sugyeong",
+    titleKr: "Luciysuu",
     field: "portrait",
     year: 2026,
     date: "2026. 3.",
     location: "Namsan Studio, Seoul",
     desc: [
-      "[작업 설명이 들어갑니다.]",
-      "<span class=\"mute\">[English text]</span>"
+      "신기한 인연,",
+      "<span class=\"mute\">A curious connection,</span>"
     ],
     images: [
       { src: "images/sugyeong/sugyeong-01.jpg", ratio: "1714/2400", caption: "" },
