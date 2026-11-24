@@ -202,15 +202,15 @@ window.PROJECTS = [
   },
   {
     id: "07",
-    title: "Untitled",
-    titleKr: "무제",
+    title: "재현",
+    titleKr: "teethmasterpiece",
     field: "portrait",
     year: 2026,
     date: "2026. 8.",
     location: "Studio, Seoul",
     desc: [
-      "[작업 설명이 들어갑니다.]",
-      "<span class=\"mute\">[English text]</span>"
+      "반짝이는 별 같은 사람.",
+      "<span class=\"mute\">Someone like a shining star.</span>"
     ],
     images: [
       { src: "images/untitled-3/untitled3-01.jpg", ratio: "1954/2400", caption: "" },
