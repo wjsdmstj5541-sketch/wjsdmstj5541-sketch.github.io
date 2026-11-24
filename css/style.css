@@ -229,14 +229,6 @@ figure figcaption { margin-top: 8px; }
 .next .label { grid-column: 1 / 5; color: var(--mute); }
 .next .big { grid-column: 5 / 13; }
 
-/* ---------- notes ---------- */
-.notes { padding: 0 var(--pad); margin-top: clamp(100px, 13vw, 200px); }
-.note { padding-top: 10px; border-top: 1px solid var(--line); align-items: start; }
-.note + .note { margin-top: clamp(80px, 10vw, 150px); }
-.note-head { grid-column: 1 / 5; }
-.note-head h2 { margin-top: var(--line-h); font-size: inherit; font-weight: 400; }
-.essay { grid-column: 6 / 11; max-width: 620px; font-size: 15px; line-height: 1.7; letter-spacing: -.005em; }
-.essay p + p { margin-top: 1.1em; }
 
 /* ---------- about ---------- */
 .portrait { grid-column: 9 / 12; margin-top: calc(var(--line-h) * 3); }
@@ -282,8 +274,6 @@ figure figcaption { margin-top: 8px; }
   .intro-photos figure:nth-child(2) { margin-top: 0; }
 
   .next .big { margin-top: 8px; }
-  .note { row-gap: calc(var(--line-h) * 2); }
-  .essay { font-size: 14px; }
   .portrait { width: 50%; margin-top: calc(var(--line-h) * 2); }
 }
 

@@ -29,7 +29,7 @@
   }
 
   function header(active) {
-    const items = [["index.html", "Index"], ["work.html", "Work"], ["notes.html", "Notes"], ["about.html", "About"]];
+    const items = [["index.html", "Index"], ["work.html", "Work"], ["about.html", "About"]];
     const nav = items
       .map(([h, t]) => `<a href="${h}"${t === active ? ' class="is-active" aria-current="page"' : ""}>${t}</a><span class="sep">,</span>`)
       .join(" ");
@@ -87,7 +87,6 @@
       ["Work <span class=\"mute\">작업</span>", [["work.html", "Intro <span class=\"mute\">인트로</span>"]]
         .concat(Object.entries(F).map(([k, f]) => [`work.html?field=${k}`, `${f.en} <span class="mute">${f.ko}</span>`]))
         .concat([["work.html?view=list", "List <span class=\"mute\">목록</span>"]])],
-      ["Notes <span class=\"mute\">작업 노트</span>", (window.NOTES.entries || []).slice(0, 4).map((e, k) => [`notes.html#note-${k + 1}`, esc(e.title)])],
       ["About <span class=\"mute\">소개</span>", [["about.html", "Profile"], [`mailto:${S.email}`, "E-mail"], [`tel:${S.phone}`, S.phone], [S.instagram, "Instagram"]]]
     ];
     $("#home-nav").innerHTML =
@@ -325,28 +324,6 @@
     });
   }
 
-  /* ---------------- Notes ---------------- */
-  function notes() {
-    const N = window.NOTES;
-    const list = N.entries || [];
-    const head = mast({
-      path: [["notes", ""]],
-      title: N.title,
-      kr: N.titleKr,
-      meta: [["Entries", `<span class="num">${pad(list.length)}</span>`]],
-      desc: N.desc
-    });
-    const body = `<section class="notes">` + list.map((e, k) => `
-      <article class="note grid" id="note-${k + 1}">
-        <header class="note-head">
-          <div class="mute num">${pad(k + 1)} — ${esc(e.date)}</div>
-          <h2>${esc(e.title)}${e.titleEn ? `<br><span class="mute">${esc(e.titleEn)}</span>` : ""}</h2>
-        </header>
-        <div class="essay">${paras(e.body)}</div>
-      </article>`).join("") + `</section>`;
-    shell("Notes", head + body);
-  }
-
   /* ---------------- About ---------------- */
   function about() {
     const head = mast({
@@ -366,6 +343,6 @@
     shell("About", head);
   }
 
-  const pages = { home, work, project, notes, about };
+  const pages = { home, work, project, about };
   (pages[document.body.dataset.page] || (() => {}))();
 })();

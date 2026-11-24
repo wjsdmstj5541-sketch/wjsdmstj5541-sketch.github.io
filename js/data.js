@@ -272,26 +272,3 @@ window.PROJECTS = [
   }
 ];
 
-// Notes 페이지 — 글만 모아 두는 곳
-// entries 에 글을 하나씩 추가하세요. 위에 있는 글이 먼저 보입니다.
-//   date  : 날짜 (예: "2026. 11.")
-//   title : 제목,  titleEn : 영문 제목 (없으면 "")
-//   body  : 문단 배열. 영문 문단은 <span class="mute">…</span> 로 감싸면 회색으로 보입니다.
-window.NOTES = {
-  title: "Notes",
-  titleKr: "작업 노트",
-  desc: [
-    "찍으면서 든 생각들을 적어 둡니다.",
-    "<span class=\"mute\">Thoughts written down while photographing.</span>"
-  ],
-  entries: [
-    {
-      date: "2026. 11.",
-      title: "마음에, 모험을",
-      titleEn: "Adventure, at heart",
-      body: [
-        "[여기에 글이 들어갑니다. js/data.js 의 NOTES.entries 에서 고칠 수 있어요.]"
-      ]
-    }
-  ]
-};
