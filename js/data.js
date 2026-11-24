@@ -225,7 +225,7 @@ window.PROJECTS = [
   {
     id: "08",
     title: "현",
-    titleKr: "Hyeon",
+    titleKr: "hi.kari.u",
     field: "portrait",
     year: 2026,
     date: "2026. 8.",
