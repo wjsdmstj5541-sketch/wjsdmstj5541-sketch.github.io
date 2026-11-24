@@ -109,8 +109,8 @@ window.PROJECTS = [
   },
   {
     id: "03",
-    title: "Untitled",
-    titleKr: "무제",
+    title: "PISUISFREE",
+    titleKr: "수경",
     field: "portrait",
     year: 2026,
     date: "2026",
@@ -119,8 +119,8 @@ window.PROJECTS = [
     publication: "개인 작업",
     hero: 6,                      // 크게 보여줄 사진 번호
     desc: [
-      "[작업 설명이 들어갑니다.]",
-      "<span class=\"mute\">[English text]</span>"
+      "수경이와의 작업은 늘 즐겁다. 함께할 때마다 새로운 자극을 받고, 서로 조금씩 성장해 나가는 기분이 든다.",
+      "<span class=\"mute\">Working with Sugyeong is always a joy. Each time we work together I find something new to spark me, and it feels as though we are both growing, little by little.</span>"
     ],
     images: [
       { src: "images/untitled/untitled-01.jpg", ratio: "2400/2400", caption: "" },
