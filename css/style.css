@@ -99,6 +99,13 @@ figure figcaption { margin-top: 8px; }
 
 /* ---------- interior header / footer ---------- */
 .site-header { padding: var(--pad); align-items: baseline; }
+/* sticky menu + path: white bands so photos pass underneath */
+:root { --head-h: calc(var(--pad) * 2 + var(--line-h)); }
+.site-header { position: sticky; top: 0; z-index: 20; background: var(--paper); }
+.path-bar {
+  position: sticky; top: var(--head-h); z-index: 19; background: var(--paper);
+  margin-top: clamp(56px, 8vw, 120px); padding: 0 var(--pad) 10px;
+}
 /* brand · nav · contact — nav sits in the true centre of the page */
 .site-header { grid-template-columns: 1fr auto 1fr; }
 .site-header .brand { grid-column: 1; }
@@ -118,9 +125,9 @@ figure figcaption { margin-top: 8px; }
 .site-footer > :nth-child(4) { grid-column: 10 / 13; justify-self: end; }
 
 /* ---------- masthead (title / meta / description) ---------- */
-.mast { padding: 0 var(--pad); margin-top: clamp(56px, 8vw, 120px); align-items: start; }
+.mast { padding: 0 var(--pad); align-items: start; }
 .mast-title { grid-column: 1 / -1; }
-.mast-opts { display: flex; flex-wrap: wrap; gap: 4px 36px; margin-top: 6px; }
+.mast-opts { display: flex; flex-wrap: wrap; gap: 4px 36px; }
 .mast-opts .k { color: var(--mute); margin-right: 10px; }
 .mast-opts .opts a { color: var(--ink); }
 .mast-opts .opts a.is-active { color: var(--link); }
@@ -247,6 +254,7 @@ figure figcaption { margin-top: 8px; }
   .home-feature figcaption { position: static; margin-top: 8px; }
 
   .site-header { row-gap: 4px; grid-template-columns: 1fr; }
+  :root { --head-h: calc(var(--pad) * 2 + var(--line-h) * 3 + 8px); }
   .site-header .primary { justify-self: start; }
   .site-header .cta { justify-self: start; }
   .site-footer { row-gap: 4px; }

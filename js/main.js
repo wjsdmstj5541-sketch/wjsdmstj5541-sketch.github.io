@@ -62,9 +62,9 @@
   function mast({ path = [], title, kr, meta = [], opts = [], desc, aside }) {
     const metaHtml = meta.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("");
     const optsHtml = opts.length ? `<div class="mast-opts">${opts.map(([k, v]) => `<span><span class="k">${k}</span>${v}</span>`).join("")}</div>` : "";
+    pathBar = crumbs(path); // drawn by shell() as a sticky bar under the menu
     return `<section class="mast grid">
       <div class="mast-title">
-        ${crumbs(path)}
         <h1 class="sr-only">${title}${kr ? ` ${kr}` : ""}</h1>
         ${optsHtml}
       </div>
@@ -73,8 +73,10 @@
     </section>`;
   }
 
+  // menu and path stay pinned to the top while scrolling (both sticky, path slides up under the menu)
+  let pathBar = "";
   function shell(active, inner) {
-    $("#app").innerHTML = header(active) + `<main>${inner}</main>` + footer();
+    $("#app").innerHTML = header(active) + (pathBar ? `<div class="path-bar">${pathBar}</div>` : "") + `<main>${inner}</main>` + footer();
   }
 
   /* ---------------- Home ---------------- */
