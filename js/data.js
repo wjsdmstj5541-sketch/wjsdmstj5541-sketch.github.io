@@ -483,7 +483,12 @@ window.PROJECTS = [
     images: [
       { src: "images/news/hannam-01.jpg", ratio: "1714/2400", caption: "태극기와 성조기를 든 지지자들이 관저 앞 거리를 걷고 있다.", captionEn: "Supporters carrying Korean and American flags walk outside the residence." },
       { src: "images/news/hannam-02.jpg", ratio: "1714/2400", caption: "손팻말을 든 집회 참가자들.", captionEn: "Rally participants holding placards." },
-      { src: "images/news/hannam-03.jpg", ratio: "1714/2400", caption: "햇빛을 받으며 구호를 외치는 참가자들.", captionEn: "Participants chant in the afternoon light." }
+      { src: "images/news/hannam-03.jpg", ratio: "1714/2400", caption: "햇빛을 받으며 구호를 외치는 참가자들.", captionEn: "Participants chant in the afternoon light." },
+      { src: "images/news/hannam-04.jpg", ratio: "1714/2400", caption: "손팻말을 든 중절모 차림의 노인과 사람들.", captionEn: "An elderly man in a fedora holds a placard among the crowd." },
+      { src: "images/news/hannam-05.jpg", ratio: "2400/1021", caption: "관저 앞 도로 양옆으로 늘어선 경찰.", captionEn: "Police officers line both sides of the road near the residence." },
+      { src: "images/news/hannam-06.jpg", ratio: "1714/2400", caption: "성조기와 태극기를 꽂은 채 걸어오는 참가자.", captionEn: "A protester walks with American and Korean flags on his back." },
+      { src: "images/news/hannam-07.jpg", ratio: "2400/1600", caption: "버스 창밖으로 보이는 관저 앞 집회.", captionEn: "The rally outside the residence, seen through a bus window." },
+      { src: "images/news/hannam-08.jpg", ratio: "2400/1600", caption: "이태원역 표지판 아래 줄지어 선 경찰.", captionEn: "Police stand in line beneath the Itaewon Station sign." }
     ]
   },
   {
