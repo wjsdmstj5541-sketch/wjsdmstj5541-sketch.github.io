@@ -226,9 +226,9 @@
 
     const prev = P[(i - 1 + P.length) % P.length];
     shell("Work", head + `<section class="plates">${plates}</section>
-      <nav class="next grid" aria-label="Projects">
-        <span class="label"><a href="${projectUrl(prev)}">← (${esc(prev.id)}) ${esc(prev.title)}</a><br>Next project <span class="num">(${esc(next.id)})</span></span>
-        <a class="big" href="${projectUrl(next)}">${esc(next.title)} →</a>
+      <nav class="next" aria-label="Projects">
+        <a class="prev" href="${projectUrl(prev)}"><span class="mute">Previous</span><span>← <span class="t">${esc(prev.title)}</span></span></a>
+        <a class="nxt" href="${projectUrl(next)}"><span class="mute">Next</span><span><span class="t">${esc(next.title)}</span> →</span></a>
       </nav>`);
 
     lightbox(shown.map((im) => ({ p, im })), ".plates .zoom");
