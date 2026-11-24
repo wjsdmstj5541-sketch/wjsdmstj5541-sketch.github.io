@@ -68,8 +68,6 @@ window.PROJECTS = [
     year: 2025,
     date: "2025. 6.",
     location: "Studio, Seoul",
-    role: "Photography",
-    publication: "개인 작업",
     hero: 4,                      // 크게 보여줄 사진 번호
     desc: [
       "우리는 자유롭지만, 스스로 선택하지 않음으로써 세상의 넓이를 단정짓고 있었던 건 아닐까. 선택의 자유를 가지고 있음에도 스스로 그 가능성을 제한하는 인간의 모순을 다룬 작업이다. 자유를 상징하는 날개와 비행이 불가능한 수중 공간을 대비시켜 무력함과 자발적 고립을 표현했다. 외부의 억압이 아닌 스스로 단절시킨 자유에 대해 질문을 던진다.",
@@ -92,8 +90,6 @@ window.PROJECTS = [
     year: 2025,
     date: "2025. 12.",
     location: "Studio, Seoul",
-    role: "Photography",
-    publication: "개인 작업",
     hero: 2,                      // 크게 보여줄 사진 번호
     desc: [
       "자기 자신을 향한 왜곡된 사랑과 집착을 시각화한 작업이다. 진주는 과도한 자기 치장과 완벽에 대한 강박을, 곰팡이와 부패한 사물은 그 이면의 내적 붕괴를 상징한다. 외면의 아름다움과 내면의 부패를 대비시켜 자기애의 모순을 표현했다.",
@@ -115,8 +111,6 @@ window.PROJECTS = [
     year: 2026,
     date: "2026",
     location: "Studio, Seoul",
-    role: "Photography",
-    publication: "개인 작업",
     hero: 6,                      // 크게 보여줄 사진 번호
     desc: [
       "수경이와의 작업은 늘 즐겁다. 함께할 때마다 새로운 자극을 받고, 서로 조금씩 성장해 나가는 기분이 든다.",
@@ -142,8 +136,6 @@ window.PROJECTS = [
     year: 2026,
     date: "2026. 6.",
     location: "Studio, Seoul",
-    role: "Photography",
-    publication: "개인 작업",
     hero: 6,                      // 크게 보여줄 사진 번호
     desc: [
       "희정님을 대학 때 과제로 처음 뵙고, 시간이 흘러 어느새 긴 인연이 되었다.",
@@ -167,7 +159,7 @@ window.PROJECTS = [
     year: 2025,
     date: "2025. 3.",
     location: "Studio, Seoul",
-    credits: [["Photo", "SEO HARU 서하루"], ["Director", "Luciysuu"]],
+    credits: [["Director", "Luciysuu"]],
         hero: 6,                      // 크게 보여줄 사진 번호
     desc: [
       "기존의 미적 기준에서 배제된 형태와 불완전함을 탐구한 작업이다. 인간의 신체를 조각적 오브제로 바라보고, 비정형적인 자세와 낯선 질감을 통해 아름다움과 추함의 경계에 질문을 던진다.",
@@ -190,8 +182,6 @@ window.PROJECTS = [
     year: 2026,
     date: "2026. 10.",
     location: "Studio, Seoul",
-    role: "Photography",
-    publication: "개인 작업",
     hero: 10,                      // 크게 보여줄 사진 번호
     desc: [
       "[작업 설명이 들어갑니다.]",
@@ -218,8 +208,6 @@ window.PROJECTS = [
     year: 2026,
     date: "2026. 8.",
     location: "Studio, Seoul",
-    role: "Photography",
-    publication: "개인 작업",
     desc: [
       "[작업 설명이 들어갑니다.]",
       "<span class=\"mute\">[English text]</span>"
@@ -242,8 +230,6 @@ window.PROJECTS = [
     year: 2026,
     date: "2026. 8.",
     location: "Studio, Seoul",
-    role: "Photography",
-    publication: "개인 작업",
     desc: [
       "[작업 설명이 들어갑니다.]",
       "<span class=\"mute\">[English text]</span>"
@@ -266,8 +252,6 @@ window.PROJECTS = [
     year: 2026,
     date: "2026. 4.",
     location: "Studio, Seoul",
-    role: "Photography",
-    publication: "개인 작업",
     desc: [
       "[작업 설명이 들어갑니다.]",
       "<span class=\"mute\">[English text]</span>"
@@ -289,8 +273,6 @@ window.PROJECTS = [
     year: 2025,
     date: "2025. 9.",
     location: "Studio, Seoul",
-    role: "Photography",
-    publication: "개인 작업",
     desc: [
       "[작업 설명이 들어갑니다.]",
       "<span class=\"mute\">[English text]</span>"
@@ -312,8 +294,6 @@ window.PROJECTS = [
     year: 2026,
     date: "2026. 3.",
     location: "Namsan Studio, Seoul",
-    role: "Photography",
-    publication: "개인 작업",
     desc: [
       "[작업 설명이 들어갑니다.]",
       "<span class=\"mute\">[English text]</span>"
@@ -335,8 +315,6 @@ window.PROJECTS = [
     year: 2025,
     date: "2025. 4.",
     location: "Jeju",
-    role: "Photography",
-    publication: "개인 작업",
     desc: [
       "[작업 설명이 들어갑니다.]",
       "<span class=\"mute\">[English text]</span>"
@@ -361,8 +339,6 @@ window.PROJECTS = [
     year: 2026,
     date: "2026. 9.",
     location: "Studio, Seoul",
-    role: "Photography",
-    publication: "모델 컴카드",
     // 맨 위 메인 사진 (컴카드에는 들어가지 않는 따로 한 장)
     lead: { src: "images/compcard/lead.jpg", ratio: "1920/2400", caption: "" },
     desc: [
@@ -402,8 +378,6 @@ window.PROJECTS = [
     year: 2025,
     date: "2025. 12.",
     location: "Studio, Seoul",
-    role: "Photography",
-    publication: "개인 작업",
     desc: [
       "[작업 설명이 들어갑니다.]",
       "<span class=\"mute\">[English text]</span>"
@@ -423,8 +397,6 @@ window.PROJECTS = [
     year: 2026,
     date: "2026. 4.",
     location: "Seoul",
-    role: "Photography",
-    publication: "개인 작업",
     desc: [
       "[작업 설명이 들어갑니다.]",
       "<span class=\"mute\">[English text]</span>"
@@ -450,8 +422,6 @@ window.PROJECTS = [
     year: 2024,
     date: "2024. 12.",
     location: "Yeouido, Seoul",
-    role: "Photography",
-    publication: "개인 작업",
     desc: [
       "2024년 12월, 비상계엄 선포 이후 서울 여의도 국회 앞에서 대통령 탄핵 촉구 집회가 열렸다.",
       "<span class=\"mute\">December 2024 — A rally calling for the president’s impeachment was held outside the National Assembly in Yeouido, Seoul, following the declaration of martial law.</span>"
@@ -473,8 +443,6 @@ window.PROJECTS = [
     year: 2025,
     date: "2025. 1.",
     location: "Hannam-dong, Seoul",
-    role: "Photography",
-    publication: "개인 작업",
     desc: [
       "2025년 1월, 서울 용산구 한남동 대통령 관저 인근에서 대통령 탄핵 찬반 집회가 열렸다.",
       "<span class=\"mute\">January 2025 — Rallies for and against the president’s impeachment were held near the presidential residence in Hannam-dong, Yongsan-gu, Seoul.</span>"
@@ -498,8 +466,6 @@ window.PROJECTS = [
     year: 2026,
     date: "2026. 6.",
     location: "Olympic Park, Seoul",
-    role: "Photography",
-    publication: "개인 작업",
     desc: [
       "2026년 6월, 서울 송파구 올림픽공원 핸드볼경기장 앞에서 투표용지 부족 사태에 항의하는 재선거 촉구 집회가 열렸다.",
       "<span class=\"mute\">June 2026 — A rally calling for a re-election was held outside the Handball Arena in Olympic Park, Songpa-gu, Seoul, in protest over a shortage of ballot papers.</span>"

@@ -203,10 +203,9 @@
     });
     const meta = [
       ["Field", `${fd.en} <span class="mute">${fd.ko}</span>`],
-      ["Role", esc(p.role)],
-      // extra credits from data.js, e.g. credits: [["Director", "Name"]]
-      ...(p.credits || []).map(([k, v]) => [esc(k), esc(v)]),
-      ["Publication", esc(p.publication)],
+      // other credits first (data.js credits: [["Director", "Name"]]), then Photo — always me unless data.js says otherwise
+      ...(p.credits || []).filter(([k]) => k !== "Photo").map(([k, v]) => [esc(k), esc(v)]),
+      ["Photo", esc(((p.credits || []).find(([k]) => k === "Photo") || [, `${S.name} ${S.nameKr}`])[1])],
       ["Location", esc(p.location)],
       ["Date", esc(p.date || p.year)]
     ].filter(([, v]) => v).map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("");  // empty fields are left out
