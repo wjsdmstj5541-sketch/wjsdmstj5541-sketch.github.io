@@ -193,7 +193,7 @@ window.PROJECTS = [
     location: "Studio, Seoul",
     role: "Photography",
     publication: "개인 작업",
-    hero: 2,                      // 크게 보여줄 사진 번호
+    hero: 10,                      // 크게 보여줄 사진 번호
     desc: [
       "[작업 설명이 들어갑니다.]",
       "<span class=\"mute\">[English text]</span>"
@@ -207,7 +207,8 @@ window.PROJECTS = [
       { src: "images/untitled-2/untitled2-06.jpg", ratio: "1920/2400", caption: "" },
       { src: "images/untitled-2/untitled2-07.jpg", ratio: "1714/2400", caption: "" },
       { src: "images/untitled-2/untitled2-08.jpg", ratio: "2400/1350", caption: "" },
-      { src: "images/untitled-2/untitled2-09.jpg", ratio: "2400/1714", caption: "" }
+      { src: "images/untitled-2/untitled2-09.jpg", ratio: "2400/1714", caption: "" },
+      { src: "images/untitled-2/untitled2-10.jpg", ratio: "2400/1920", caption: "" }
     ]
   },
   {
