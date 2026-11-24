@@ -146,11 +146,13 @@ figure figcaption { margin-top: 8px; }
 
 /* ---------- work: grid ---------- */
 .work-grid {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(36px, 4vw, 56px) var(--pad);
   padding: 0 var(--pad);
   margin-top: clamp(48px, 6vw, 96px);
-  row-gap: clamp(80px, 11vw, 180px);
-  align-items: start;
 }
+.work-item:hover img { opacity: .85; }
+.work-item:hover .cap .t { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .work-item .cap { display: grid; grid-template-columns: auto 1fr; column-gap: 10px; margin-top: 8px; }
 .work-item:hover { color: inherit; }
 .work-item:hover .cap, .work-item:hover .cap .mute { color: var(--link); }
@@ -239,8 +241,7 @@ figure figcaption { margin-top: 8px; }
   .mast-meta dd + dt { margin-top: 0; }
 
   /* keep an asymmetric rhythm on phones */
-  .work-grid > * { width: 82%; }
-  .work-grid > :nth-child(even) { justify-self: end; }
+  .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .thumbs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .plate-top { flex-direction: column; }
   .plate-hero { max-width: 100%; width: 100%; }

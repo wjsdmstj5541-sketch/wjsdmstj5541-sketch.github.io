@@ -150,17 +150,14 @@
       const text = AI.text && AI.text.length ? `<div class="plate-text"><div class="label mute">Description</div>${paras(AI.text)}</div>` : "";
       body = `<section class="plates intro"><div class="plate-top">${src ? `<figure class="plate-hero">${media({ src })}</figure>` : ""}${text}</div></section>`;
     } else if (view === "grid") {
-      const slots = [
-        { c: "1 / 6", t: 0 }, { c: "8 / 13", t: 9 },
-        { c: "3 / 8", t: 0 }, { c: "9 / 12", t: 5 },
-        { c: "1 / 5", t: 4 }, { c: "6 / 12", t: 0 }
-      ];
-      body = `<section class="work-grid grid">` + list.map((p, i) => {
-        const s = slots[i % slots.length];
+      // equal covers, three to a row — same rule as the thumbnails on a project page
+      body = `<section class="work-grid">` + list.map((p) => {
         const fd = field(p.field);
-        return `<a class="work-item" href="${projectUrl(p)}" style="grid-column:${s.c};margin-top:${s.t}vw">
-          ${media(cover(p))}
-          <div class="cap"><span class="num">(${esc(p.id)})</span><span>${esc(p.title)} <span class="mute">${esc(p.titleKr)}</span><br><span class="mute">${fd.en}, ${p.year}</span></span></div>
+        const im = cover(p);
+        const pic = im.src ? `<img src="${esc(im.src)}" alt="${esc(p.title)}" loading="lazy">` : media(im);
+        return `<a class="work-item" href="${projectUrl(p)}">
+          <span class="thumb">${pic}</span>
+          <div class="cap"><span class="num">${esc(p.id)}</span><span><span class="t">${esc(p.title)}</span> <span class="mute">${esc(p.titleKr)}</span><br><span class="mute">${fd.en}, ${p.year}</span></span></div>
         </a>`;
       }).join("") + `</section>`;
     } else {
