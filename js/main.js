@@ -111,7 +111,7 @@
     if (real.length) pool = real;
     const { p, im } = pool[Math.floor(Math.random() * pool.length)];
     $("#feature").innerHTML = `<a href="${projectUrl(p)}">${media(im)}</a>
-      <figcaption><span class="num">(${esc(p.id)})</span> ${esc(p.title)} <span class="mute">${esc(p.titleKr)}</span><br>
+      <figcaption><span class="num">(${esc(p.id)})</span> ${esc(p.title)} <span class="mute">${esc(p.titleEn)}</span><br>
       <span class="mute">${esc(String(im.caption || "").replace(/[.。]\s*$/, ""))}, ${esc(p.location)}, ${p.year}</span></figcaption>`;
   }
 
@@ -160,14 +160,14 @@
         const pic = im.src ? `<img src="${esc(im.src)}" alt="${esc(p.title)}" loading="lazy">` : media(im);
         return `<a class="work-item" href="${projectUrl(p)}" style="--r:${esc(im.ratio || "4/5")}">
           ${pic}
-          <div class="cap"><span class="num">${esc(p.id)}</span><span><span class="t">${esc(p.title)}</span> <span class="mute">${esc(p.titleKr)}</span><br><span class="mute">${fd.en}, ${p.year}</span></span></div>
+          <div class="cap"><span class="num">${esc(p.id)}</span><span><span class="t">${esc(p.title)}</span> <span class="mute">${esc(p.titleEn)}</span><br><span class="mute">${fd.en}, ${p.year}</span></span></div>
         </a>`;
       }).join("") + `</section>`;
     } else {
       body = `<section class="work-list">
-        <div class="row head grid"><span>No.</span><span>Title</span><span>제목</span><span>Field</span><span>Location</span><span>Year</span></div>
+        <div class="row head grid"><span>No.</span><span>제목</span><span>Title</span><span>Field</span><span>Location</span><span>Year</span></div>
         ${list.map((p) => `<a class="row grid" href="${projectUrl(p)}" data-id="${esc(p.id)}">
-          <span class="num">${esc(p.id)}</span><span>${esc(p.title)}</span><span>${esc(p.titleKr)}</span>
+          <span class="num">${esc(p.id)}</span><span>${esc(p.title)}</span><span>${esc(p.titleEn)}</span>
           <span>${field(p.field).en}</span><span>${esc(p.location)}</span><span class="num">${p.year}</span></a>`).join("")}
       </section><div class="preview" id="preview" aria-hidden="true"></div>`;
     }
@@ -198,7 +198,7 @@
     const head = mast({
       path: [["work", "work.html"], [p.field, `work.html?field=${p.field}`], [slug(p.title), ""]],
       title: esc(p.title),
-      kr: esc(p.titleKr),
+      kr: esc(p.titleEn),
       meta: []
     });
     const meta = [
@@ -295,7 +295,7 @@
     function show(k) {
       cur = (k + imgs.length) % imgs.length;
       const im = imgs[cur], p = items[cur].p;
-      $(".lb-title", lb).innerHTML = `${esc(p.title)} <span class="mute">${esc(p.titleKr)}</span>`;
+      $(".lb-title", lb).innerHTML = `${esc(p.title)} <span class="mute">${esc(p.titleEn)}</span>`;
       box.innerHTML = media(im, pad(cur + 1));
       $(".lb-count", lb).textContent = `${pad(cur + 1)} / ${pad(imgs.length)}`;
       $(".lb-cap", lb).innerHTML = `<span>${esc(im.caption)}</span><span class="mute">${esc(im.captionEn || "")}</span><span></span>`;

@@ -63,7 +63,7 @@ window.PROJECTS = [
   {
     id: "01",
     title: "단절된 자유",
-    titleKr: "Disconnected Freedom",
+    titleEn: "Disconnected Freedom",
     field: "portrait",
     year: 2025,
     date: "2025. 6.",
@@ -84,8 +84,8 @@ window.PROJECTS = [
   },
   {
     id: "02",
-    title: "Narcissism",
-    titleKr: "나르시시즘",
+    title: "나르시시즘",
+    titleEn: "Narcissism",
     field: "portrait",
     year: 2025,
     date: "2025. 12.",
@@ -105,8 +105,8 @@ window.PROJECTS = [
   },
   {
     id: "03",
-    title: "PISUISFREE",
-    titleKr: "수경",
+    title: "수경",
+    titleEn: "PISUISFREE",
     field: "portrait",
     year: 2026,
     date: "2026",
@@ -131,7 +131,7 @@ window.PROJECTS = [
   {
     id: "04",
     title: "희정",
-    titleKr: "Heejeong",
+    titleEn: "Heejeong",
     field: "portrait",
     year: 2026,
     date: "2026. 6.",
@@ -154,7 +154,7 @@ window.PROJECTS = [
   {
     id: "05",
     title: "추의 미학",
-    titleKr: "Aesthetics of Ugliness",
+    titleEn: "Aesthetics of Ugliness",
     field: "portrait",
     year: 2025,
     date: "2025. 3.",
@@ -176,8 +176,8 @@ window.PROJECTS = [
   },
   {
     id: "06",
-    title: "Untitled",
-    titleKr: "무제",
+    title: "무제",
+    titleEn: "Untitled",
     field: "portrait",
     year: 2026,
     date: "2026. 10.",
@@ -203,7 +203,7 @@ window.PROJECTS = [
   {
     id: "07",
     title: "재현",
-    titleKr: "teethmasterpiece",
+    titleEn: "teethmasterpiece",
     field: "portrait",
     year: 2026,
     date: "2026. 8.",
@@ -225,7 +225,7 @@ window.PROJECTS = [
   {
     id: "08",
     title: "현",
-    titleKr: "hi.kari.u",
+    titleEn: "hi.kari.u",
     field: "portrait",
     year: 2026,
     date: "2026. 8.",
@@ -247,7 +247,7 @@ window.PROJECTS = [
   {
     id: "09",
     title: "청",
-    titleKr: "k1mche0ng",
+    titleEn: "k1mche0ng",
     field: "portrait",
     year: 2026,
     date: "2026. 4.",
@@ -268,7 +268,7 @@ window.PROJECTS = [
   {
     id: "10",
     title: "요괴",
-    titleKr: "Yogoe",
+    titleEn: "Yogoe",
     field: "portrait",
     year: 2025,
     date: "2025. 9.",
@@ -289,7 +289,7 @@ window.PROJECTS = [
   {
     id: "11",
     title: "수경",
-    titleKr: "Luciysuu",
+    titleEn: "Luciysuu",
     field: "portrait",
     year: 2026,
     date: "2026. 3.",
@@ -310,7 +310,7 @@ window.PROJECTS = [
   {
     id: "12",
     title: "제주",
-    titleKr: "Jeju",
+    titleEn: "Jeju",
     field: "portrait",
     year: 2025,
     date: "2025. 4.",
@@ -333,8 +333,8 @@ window.PROJECTS = [
   },
   {
     id: "13",
-    title: "Comp Card",
-    titleKr: "컴카드",
+    title: "컴카드",
+    titleEn: "Comp Card",
     field: "portrait",
     year: 2026,
     date: "2026. 9.",
@@ -373,7 +373,7 @@ window.PROJECTS = [
   {
     id: "14",
     title: "몸",
-    titleKr: "Body",
+    titleEn: "Body",
     field: "portrait",
     year: 2025,
     date: "2025. 12.",
@@ -392,7 +392,7 @@ window.PROJECTS = [
   {
     id: "15",
     title: "서둘러, 우린 꿈을 꾸고 있어",
-    titleKr: "Hurry, We Are Dreaming",
+    titleEn: "Hurry, We Are Dreaming",
     field: "portrait",
     year: 2026,
     date: "2026. 4.",
@@ -416,8 +416,8 @@ window.PROJECTS = [
   },
   {
     id: "16",
-    title: "Outside the National Assembly",
-    titleKr: "국회 앞",
+    title: "국회 앞",
+    titleEn: "Outside the National Assembly",
     field: "other",
     year: 2024,
     date: "2024. 12.",
@@ -437,8 +437,8 @@ window.PROJECTS = [
   },
   {
     id: "17",
-    title: "Hannam-dong",
-    titleKr: "한남동 관저 앞",
+    title: "한남동 관저 앞",
+    titleEn: "Hannam-dong",
     field: "other",
     year: 2025,
     date: "2025. 1.",
@@ -460,8 +460,8 @@ window.PROJECTS = [
   },
   {
     id: "18",
-    title: "Olympic Handball Arena",
-    titleKr: "올림픽 핸드볼경기장 앞",
+    title: "올림픽 핸드볼경기장 앞",
+    titleEn: "Olympic Handball Arena",
     field: "other",
     year: 2026,
     date: "2026. 6.",

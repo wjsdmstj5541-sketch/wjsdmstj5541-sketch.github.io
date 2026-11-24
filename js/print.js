@@ -45,7 +45,7 @@
       <div class="intro-text">${paras(S.intro)}</div>
       <div class="contents">
         <div class="h">Contents <span>목차</span></div>
-        <ul>${projects.map((p, i) => `<li><span class="num">${esc(p.id)}</span><span>${esc(p.title)} <span class="mute">${esc(p.titleKr)}</span></span><span class="mute">${field(p.field).en}, ${p.year}</span><span class="num">${pad(start[i])}</span></li>`).join("")}
+        <ul>${projects.map((p, i) => `<li><span class="num">${esc(p.id)}</span><span>${esc(p.title)} <span class="mute">${esc(p.titleEn)}</span></span><span class="mute">${field(p.field).en}, ${p.year}</span><span class="num">${pad(start[i])}</span></li>`).join("")}
         <li><span></span><span>About <span class="mute">소개</span></span><span></span><span class="num">${pad(n + 1)}</span></li></ul>
       </div>
     </div>`);
@@ -56,7 +56,7 @@
     const fd = field(p.field);
     add("ptitle", `
       <div class="g">
-        <div class="t"><span class="arrow">→</span><h1>${esc(p.title)}</h1><span class="kr">${esc(p.titleKr)}</span></div>
+        <div class="t"><span class="arrow">→</span><h1>${esc(p.title)}</h1><span class="kr">${esc(p.titleEn)}</span></div>
         <dl>
           <dt>Field</dt><dd>${fd.en} <span class="mute">${fd.ko}</span></dd>
           <dt>Location</dt><dd>${esc(p.location)}</dd>
@@ -71,7 +71,7 @@
       // landscape frames stay centred and large; portrait frames shift left / centre / right
       const a = ratioNum(im.ratio) >= 1 ? "" : align[k % align.length];
       add("plate", `
-        <div class="head"><span><span class="num">(${esc(p.id)})</span> ${esc(p.title)} <span class="mute">${esc(p.titleKr)}</span></span><span class="mute num">${pad(k + 1)} / ${pad(p.images.length)}</span></div>
+        <div class="head"><span><span class="num">(${esc(p.id)})</span> ${esc(p.title)} <span class="mute">${esc(p.titleEn)}</span></span><span class="mute num">${pad(k + 1)} / ${pad(p.images.length)}</span></div>
         <div class="stage ${a}">${pic(im)}</div>
         <div class="cap"><span class="num">${pad(k + 1)}</span><span>${esc(im.caption)} <span class="mute">${esc(im.captionEn || "")}</span><br><span class="mute">${esc(im.place || p.location)}, ${esc(im.date || p.date || p.year)} — © ${esc(S.name)}</span></span></div>`);
     });
