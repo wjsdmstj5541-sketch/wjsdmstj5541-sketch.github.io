@@ -143,7 +143,7 @@ window.PROJECTS = [
     date: "2026. 6.",
     location: "Studio, Seoul",
     role: "Photography",
-    publication: "프로필 촬영",
+    publication: "개인 작업",
     hero: 6,                      // 크게 보여줄 사진 번호
     desc: [
       "희정님을 대학 때 과제로 처음 뵙고, 시간이 흘러 어느새 긴 인연이 되었다.",
