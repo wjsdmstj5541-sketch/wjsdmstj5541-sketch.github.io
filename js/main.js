@@ -31,8 +31,8 @@
   function header(active) {
     const items = [["index.html", "Index"], ["work.html", "Work"], ["about.html", "About"]];
     const nav = items
-      .map(([h, t]) => `<a href="${h}"${t === active ? ' class="is-active" aria-current="page"' : ""}>${t}</a><span class="sep">,</span>`)
-      .join(" ");
+      .map(([h, t]) => `<a href="${h}"${t === active ? ' class="is-active" aria-current="page"' : ""}>${t}</a>`)
+      .join(`<span class="sep">,</span> `);
     return `<header class="site-header grid" id="top">
       <a class="brand" href="index.html">${esc(S.name)} <span class="mute">${esc(S.nameKr)}</span></a>
       <nav class="primary" aria-label="Primary">${nav}</nav>
@@ -43,8 +43,7 @@
   function footer() {
     return `<footer class="site-footer grid">
       <span>© ${S.year} ${esc(S.name)} / ${esc(S.realName)}</span>
-      <a href="mailto:${esc(S.email)}">E-mail</a>
-      <a href="${esc(S.instagram)}" target="_blank" rel="noopener">Instagram</a>
+      <span class="links"><a href="mailto:${esc(S.email)}">E-mail</a><span class="sep">,</span> <a href="${esc(S.instagram)}" target="_blank" rel="noopener">Instagram</a></span>
       <a href="#top">Top ↑</a>
     </footer>`;
   }
