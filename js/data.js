@@ -509,7 +509,13 @@ window.PROJECTS = [
       { src: "images/news/olympic-01.jpg", ratio: "1920/2400", caption: "‘STOP THE STEAL! 재선거!’ 손팻말을 든 참가자.", captionEn: "A participant holds a sign reading “Stop the steal! Re-election!”" },
       { src: "images/news/olympic-02.jpg", ratio: "1599/2400", caption: "닫힌 셔터 앞, 양산 뒤에 앉은 참가자들.", captionEn: "Participants seated behind umbrellas in front of a closed shutter." },
       { src: "images/news/olympic-03.jpg", ratio: "1598/2400", caption: "‘재선거’ 종이를 가슴에 건 참가자.", captionEn: "A participant wearing a “re-election” sign." },
-      { src: "images/news/olympic-04.jpg", ratio: "1598/2400", caption: "계단을 메운 참가자들 앞에서 한 남성이 주먹을 들어 올리고 있다.", captionEn: "A man raises his fist in front of participants filling the steps." }
+      { src: "images/news/olympic-04.jpg", ratio: "1598/2400", caption: "계단을 메운 참가자들 앞에서 한 남성이 주먹을 들어 올리고 있다.", captionEn: "A man raises his fist in front of participants filling the steps." },
+      { src: "images/news/olympic-05.jpg", ratio: "1599/2400", caption: "‘재선거 stop the steal’ 손팻말과 치켜든 주먹.", captionEn: "A raised fist and a ‘Stop the Steal’ sign outside the arena." },
+      { src: "images/news/olympic-06.jpg", ratio: "1598/2400", caption: "KOREA 우산 아래 태극기를 든 참가자들.", captionEn: "Protesters with Korean flags under a KOREA umbrella." },
+      { src: "images/news/olympic-07.jpg", ratio: "2400/1598", caption: "바닥에 펼쳐 놓은 손글씨 구호들.", captionEn: "Handwritten slogans laid out on the pavement." },
+      { src: "images/news/olympic-08.jpg", ratio: "2400/1598", caption: "난간에 붙은 ‘재선거’ 손팻말들.", captionEn: "‘Re-election’ signs taped along a railing." },
+      { src: "images/news/olympic-09.jpg", ratio: "2400/1598", caption: "창가에 붙은 구호를 읽는 사람.", captionEn: "A woman reads the notes taped to the windows." },
+      { src: "images/news/olympic-10.jpg", ratio: "1599/2400", caption: "태극기를 메고 걸어가는 참가자.", captionEn: "A protester walks past carrying a Korean flag." }
     ]
   }
 ];
