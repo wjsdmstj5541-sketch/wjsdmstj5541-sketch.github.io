@@ -314,7 +314,7 @@ window.PROJECTS = [
     field: "portrait",
     year: 2025,
     date: "2025. 4.",
-    location: "Jeju",
+    location: "Udo, Jeju",
     desc: [
       "우도를 한 바퀴 돌며 여러 해변과 섬 곳곳을 구석구석 누비고 다녔다. 발길이 닿는 곳마다 사진을 남겼다.",
       "<span class=\"mute\">We circled Udo, wandering its beaches and every corner of the island. Wherever our feet took us, we left photographs behind.</span>"
