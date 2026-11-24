@@ -209,7 +209,7 @@
       ["Publication", esc(p.publication)],
       ["Location", esc(p.location)],
       ["Date", esc(p.date || p.year)]
-    ].map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("");
+    ].filter(([, v]) => v).map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("");  // empty fields are left out
 
     const zoom = (n, inner) => `<button class="zoom" data-i="${n - 1}" aria-label="크게 보기 ${pad(n)}">${inner}</button>`;
 
