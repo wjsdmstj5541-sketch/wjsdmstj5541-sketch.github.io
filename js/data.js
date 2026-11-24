@@ -461,7 +461,9 @@ window.PROJECTS = [
       { src: "images/news/assembly-01.jpg", ratio: "1714/2400", caption: "국회의사당을 배경으로 깃발이 나부끼고 있다.", captionEn: "Flags fly in front of the National Assembly building." },
       { src: "images/news/assembly-02.jpg", ratio: "2400/1714", caption: "탄핵을 요구하는 손팻말을 든 시민이 국회 앞 도로를 걷고 있다.", captionEn: "A man carries placards calling for impeachment along the road outside the Assembly." },
       { src: "images/news/assembly-03.jpg", ratio: "1714/2400", caption: "바닥에 붙은 ‘윤석열 체포’ 전단.", captionEn: "Leaflets calling for the president's arrest, stuck to the pavement." },
-      { src: "images/news/assembly-04.jpg", ratio: "2400/1714", caption: "발밑에 밟힌 손팻말과 신문.", captionEn: "Placards and newspapers underfoot." }
+      { src: "images/news/assembly-04.jpg", ratio: "2400/1714", caption: "발밑에 밟힌 손팻말과 신문.", captionEn: "Placards and newspapers underfoot." },
+      { src: "images/news/assembly-05.jpg", ratio: "1714/2400", caption: "낮은 햇빛 속, 목도리와 마스크로 얼굴을 가린 집회 참가자들.", captionEn: "Protesters wrapped in scarves and masks in the low winter sun." },
+      { src: "images/news/assembly-06.jpg", ratio: "2400/1600", caption: "‘내란동조 탄핵거부’ 전광판을 든 참가자.", captionEn: "A protester holds up an LED sign." }
     ]
   },
   {
