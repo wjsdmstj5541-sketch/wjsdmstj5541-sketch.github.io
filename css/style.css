@@ -145,12 +145,20 @@ figure figcaption { margin-top: 8px; }
 .mast-meta .opts a:hover { color: var(--link); }
 
 /* ---------- work: grid ---------- */
+/* every cover gets the same height (--h) and keeps its own width; landscapes shrink to fit the column */
 .work-grid {
+  --h: clamp(200px, 21vw, 300px);
   display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(36px, 4vw, 56px) var(--pad);
+  justify-items: center; align-items: end;
+  gap: clamp(90px, 10vw, 160px) clamp(40px, 6vw, 100px);
+  max-width: 1120px;
+  margin: clamp(80px, 9vw, 140px) auto 0;
   padding: 0 var(--pad);
-  margin-top: clamp(48px, 6vw, 96px);
 }
+.work-item { display: block; position: relative; width: min(calc(var(--h) * (var(--r))), 100%); }
+/* caption hangs below the photo so photo bottoms line up across a row, however long the title */
+.work-item .cap { position: absolute; top: 100%; left: 0; width: max(100%, 200px); }
+.work-item img { width: 100%; height: auto; }
 .work-item:hover img { opacity: .85; }
 .work-item:hover .cap .t { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .work-item .cap { display: grid; grid-template-columns: auto 1fr; column-gap: 10px; margin-top: 8px; }
@@ -241,7 +249,7 @@ figure figcaption { margin-top: 8px; }
   .mast-meta dd + dt { margin-top: 0; }
 
   /* keep an asymmetric rhythm on phones */
-  .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .work-grid { --h: 42vw; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 110px; column-gap: var(--pad); }
   .thumbs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .plate-top { flex-direction: column; }
   .plate-hero { max-width: 100%; width: 100%; }

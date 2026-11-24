@@ -150,13 +150,13 @@
       const text = AI.text && AI.text.length ? `<div class="plate-text"><div class="label mute">Description</div>${paras(AI.text)}</div>` : "";
       body = `<section class="plates intro"><div class="plate-top">${src ? `<figure class="plate-hero">${media({ src })}</figure>` : ""}${text}</div></section>`;
     } else if (view === "grid") {
-      // equal covers, three to a row — same rule as the thumbnails on a project page
+      // small covers at their own proportions, lots of air, three to a row, centred
       body = `<section class="work-grid">` + list.map((p) => {
         const fd = field(p.field);
         const im = cover(p);
         const pic = im.src ? `<img src="${esc(im.src)}" alt="${esc(p.title)}" loading="lazy">` : media(im);
-        return `<a class="work-item" href="${projectUrl(p)}">
-          <span class="thumb">${pic}</span>
+        return `<a class="work-item" href="${projectUrl(p)}" style="--r:${esc(im.ratio || "4/5")}">
+          ${pic}
           <div class="cap"><span class="num">${esc(p.id)}</span><span><span class="t">${esc(p.title)}</span> <span class="mute">${esc(p.titleKr)}</span><br><span class="mute">${fd.en}, ${p.year}</span></span></div>
         </a>`;
       }).join("") + `</section>`;
