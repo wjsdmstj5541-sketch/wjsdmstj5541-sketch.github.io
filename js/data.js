@@ -84,7 +84,7 @@ window.PROJECTS = [
   },
   {
     id: "02",
-    title: "나르시시즘",
+    title: "자기애성 인격장애",
     titleEn: "Narcissism",
     field: "portrait",
     year: 2025,
