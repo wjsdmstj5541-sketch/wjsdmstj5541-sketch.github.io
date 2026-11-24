@@ -376,6 +376,13 @@ window.PROJECTS = [
           { src: "images/compcard/m1-03.jpg", ratio: "1599/2400", caption: "" },
           { src: "images/compcard/m1-04.jpg", ratio: "1598/2400", caption: "" },
           { src: "images/compcard/m1-05.jpg", ratio: "1599/2400", caption: "" }
+      ] },
+      { label: "Model 02", images: [
+          { src: "images/compcard/m2-01.jpg", ratio: "1714/2400", caption: "" },
+          { src: "images/compcard/m2-02.jpg", ratio: "1714/2400", caption: "" },
+          { src: "images/compcard/m2-03.jpg", ratio: "1714/2400", caption: "" },
+          { src: "images/compcard/m2-04.jpg", ratio: "1714/2400", caption: "" },
+          { src: "images/compcard/m2-05.jpg", ratio: "1598/2400", caption: "" }
       ] }
     ]
   },
