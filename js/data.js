@@ -389,7 +389,7 @@ window.PROJECTS = [
           { src: "images/compcard/m3-02.jpg", ratio: "1920/2400", caption: "" },
           { src: "images/compcard/m3-03.jpg", ratio: "1919/2400", caption: "" },
           { src: "images/compcard/m3-04.jpg", ratio: "1902/2400", caption: "" },
-          { src: "images/compcard/m3-05.jpg", ratio: "1714/2400", caption: "" }
+          { src: "images/compcard/m3-05.jpg", ratio: "1920/2400", caption: "" }
       ] }
     ]
   },
