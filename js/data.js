@@ -418,6 +418,33 @@ window.PROJECTS = [
   },
   {
     id: "15",
+    title: "서둘러, 우린 꿈을 꾸고 있어",
+    titleKr: "Hurry, We Are Dreaming",
+    field: "portrait",
+    year: 2026,
+    date: "2026. 4.",
+    location: "Seoul",
+    role: "Photography",
+    publication: "개인 작업",
+    desc: [
+      "[작업 설명이 들어갑니다.]",
+      "<span class=\"mute\">[English text]</span>"
+    ],
+    images: [
+      { src: "images/dream/dream-01.jpg", ratio: "1714/2400", caption: "" },
+      { src: "images/dream/dream-02.jpg", ratio: "2400/1920", caption: "" },
+      { src: "images/dream/dream-03.jpg", ratio: "1714/2400", caption: "" },
+      { src: "images/dream/dream-04.jpg", ratio: "2400/1598", caption: "" },
+      { src: "images/dream/dream-05.jpg", ratio: "1920/2400", caption: "" },
+      { src: "images/dream/dream-06.jpg", ratio: "2400/1598", caption: "" },
+      { src: "images/dream/dream-07.jpg", ratio: "2400/1349", caption: "" },
+      { src: "images/dream/dream-08.jpg", ratio: "2400/1920", caption: "" },
+      { src: "images/dream/dream-09.jpg", ratio: "2400/1598", caption: "" },
+      { src: "images/dream/dream-10.jpg", ratio: "1920/2400", caption: "" }
+    ]
+  },
+  {
+    id: "16",
     title: "Outside the National Assembly",
     titleKr: "국회 앞",
     field: "other",
@@ -438,7 +465,7 @@ window.PROJECTS = [
     ]
   },
   {
-    id: "16",
+    id: "17",
     title: "Hannam-dong",
     titleKr: "한남동 관저 앞",
     field: "other",
@@ -458,7 +485,7 @@ window.PROJECTS = [
     ]
   },
   {
-    id: "17",
+    id: "18",
     title: "Olympic Handball Arena",
     titleKr: "올림픽 핸드볼경기장 앞",
     field: "other",
