@@ -209,26 +209,18 @@
     const cap = (im, n) => `<figcaption><span class="num">${pad(n)}</span><span>${esc(im.caption)}${im.captionEn ? ` <span class="mute">${esc(im.captionEn)}</span>` : ""}</span></figcaption>`;
     const zoom = (n, inner) => `<button class="zoom" data-i="${n - 1}" aria-label="크게 보기 ${pad(n)}">${inner}</button>`;
 
-    // large photograph on the left (data.js: hero = photo number in images, default 1), text on the right,
-    // then every other photograph as an equal-sized thumbnail. Numbers follow the order shown: hero = 01.
+    // one centred column, every photograph the same width (own height):
+    // main photo (data.js: hero = photo number in images, default 1) → description + info → the rest, one under another.
+    // Numbers follow the order shown: hero = 01.
     const h = Math.min(Math.max((p.hero || 1) - 1, 0), p.images.length - 1);
     const shown = [p.images[h]].concat(p.images.filter((_, k) => k !== h));
-    const hero = shown[0];
-    const others = shown.slice(1).map((im, k) => ({ im, n: k + 2 }));
-
-    let plates = hero ? `<div class="plate-top">
-        <figure class="plate-hero">${zoom(1, media(hero, pad(1)))}${cap(hero, 1)}</figure>
-        <div class="plate-text">
-          <div class="label mute">Description</div>${paras(p.desc || [])}
-          <dl class="plate-meta">${meta}</dl>
-        </div>
-      </div>` : "";
-    if (others.length) {
-      plates += `<div class="thumbs" style="--n:${Math.ceil(others.length / Math.ceil(others.length / 6))}">` + others.map(({ im, n }) => {
-        const pic = im.src ? `<img src="${esc(im.src)}" alt="${esc(im.caption || "")}" loading="lazy">` : media(im);
-        return `<figure>${zoom(n, `<span class="thumb">${pic}</span>`)}${cap(im, n)}</figure>`;
-      }).join("") + `</div>`;
-    }
+    const fig = (im, n) => `<figure>${zoom(n, media(im, pad(n)))}${cap(im, n)}</figure>`;
+    const text = `<div class="sheet-text">
+        <div><div class="label mute">Description</div>${paras(p.desc || [])}</div>
+        <dl class="plate-meta">${meta}</dl>
+      </div>`;
+    let plates = shown.length ? fig(shown[0], 1) + text + shown.slice(1).map((im, k) => fig(im, k + 2)).join("") : text;
+    plates = `<div class="sheet">${plates}</div>`;
 
     const prev = P[(i - 1 + P.length) % P.length];
     shell("Work", head + `<section class="plates">${plates}</section>

@@ -198,6 +198,14 @@ figure figcaption { margin-top: 8px; }
 .plate-hero .media { width: auto; }
 .plate-hero .media img { max-height: calc(100vh - 140px); max-height: calc(100svh - 140px); width: auto; max-width: 100%; }
 .plate-hero figcaption { width: 100%; max-width: none; margin-top: 8px; }
+/* project page: one centred column, equal widths */
+.sheet { width: min(620px, 100%); margin: 0 auto; }
+.sheet figure + figure { margin-top: clamp(56px, 6vw, 96px); }
+.sheet figcaption { margin-top: 8px; }
+.sheet-text { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: var(--pad); margin: clamp(48px, 5vw, 72px) 0 clamp(96px, 10vw, 160px); }
+.sheet-text p + p { margin-top: var(--line-h); }
+.sheet-text .plate-meta { margin-top: 0; padding-top: 0; border-top: 0; grid-template-columns: 80px 1fr; align-content: start; }
+.sheet .zoom:hover img { opacity: .9; }
 .thumbs {
   display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr));
   gap: 28px var(--pad); margin-top: clamp(40px, 5vw, 72px);
@@ -251,6 +259,7 @@ figure figcaption { margin-top: 8px; }
   /* keep an asymmetric rhythm on phones */
   .work-grid { --h: 42vw; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 110px; column-gap: var(--pad); }
   .thumbs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .sheet-text { grid-template-columns: 1fr; row-gap: calc(var(--line-h) * 2); }
   .plate-top { flex-direction: column; }
   .plate-hero { max-width: 100%; width: 100%; }
   .plate-hero .media img { width: 100%; max-height: none; }
