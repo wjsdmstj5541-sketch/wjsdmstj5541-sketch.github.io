@@ -502,8 +502,8 @@ window.PROJECTS = [
     role: "Photography",
     publication: "개인 작업",
     desc: [
-      "2026년 6월, 서울 올림픽공원 핸드볼경기장 앞. 참가자들이 ‘재선거’와 ‘STOP THE STEAL’이 적힌 손팻말을 들고 모였습니다.",
-      "<span class=\"mute\">June 2026. Outside the Handball Arena in Olympic Park, participants gathered with signs reading “Re-election” and “Stop the steal.”</span>"
+      "2026년 6월, 서울 송파구 올림픽공원 핸드볼경기장 앞에서 투표용지 부족 사태에 항의하는 재선거 촉구 집회가 열렸다.",
+      "<span class=\"mute\">June 2026 — A rally calling for a re-election was held outside the Handball Arena in Olympic Park, Songpa-gu, Seoul, in protest over a shortage of ballot papers.</span>"
     ],
     images: [
       { src: "images/news/olympic-01.jpg", ratio: "1920/2400", caption: "‘STOP THE STEAL! 재선거!’ 손팻말을 든 참가자.", captionEn: "A participant holds a sign reading “Stop the steal! Re-election!”" },
