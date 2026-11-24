@@ -281,6 +281,29 @@ window.PROJECTS = [
   },
   {
     id: "10",
+    title: "요괴",
+    titleKr: "Yogoe",
+    field: "portrait",
+    year: 2025,
+    date: "2025. 9.",
+    location: "Studio, Seoul",
+    role: "Photography",
+    publication: "개인 작업",
+    desc: [
+      "[작업 설명이 들어갑니다.]",
+      "<span class=\"mute\">[English text]</span>"
+    ],
+    images: [
+      { src: "images/yogoe/yogoe-01.jpg", ratio: "1954/2400", caption: "" },
+      { src: "images/yogoe/yogoe-02.jpg", ratio: "2400/1714", caption: "" },
+      { src: "images/yogoe/yogoe-03.jpg", ratio: "2400/1800", caption: "" },
+      { src: "images/yogoe/yogoe-04.jpg", ratio: "1919/2400", caption: "" },
+      { src: "images/yogoe/yogoe-05.jpg", ratio: "1920/2400", caption: "" },
+      { src: "images/yogoe/yogoe-06.jpg", ratio: "1919/2400", caption: "" }
+    ]
+  },
+  {
+    id: "11",
     title: "Outside the National Assembly",
     titleKr: "국회 앞",
     field: "other",
@@ -301,7 +324,7 @@ window.PROJECTS = [
     ]
   },
   {
-    id: "11",
+    id: "12",
     title: "Hannam-dong",
     titleKr: "한남동 관저 앞",
     field: "other",
@@ -321,7 +344,7 @@ window.PROJECTS = [
     ]
   },
   {
-    id: "12",
+    id: "13",
     title: "Olympic Handball Arena",
     titleKr: "올림픽 핸드볼경기장 앞",
     field: "other",
