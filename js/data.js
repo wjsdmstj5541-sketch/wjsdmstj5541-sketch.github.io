@@ -477,8 +477,8 @@ window.PROJECTS = [
     role: "Photography",
     publication: "개인 작업",
     desc: [
-      "2025년 1월, 대통령 관저가 있는 한남동 앞 거리. 태극기와 성조기를 든 대통령 지지자들이 겨울 오후의 낮은 햇빛 속에 모였습니다.",
-      "<span class=\"mute\">January 2025. Supporters of the president, carrying Korean and American flags, gathered in the low winter sun outside the presidential residence in Hannam-dong.</span>"
+      "2025년 1월, 서울 용산구 한남동 대통령 관저 인근에서 대통령 탄핵 찬반 집회가 열렸다.",
+      "<span class=\"mute\">January 2025 — Rallies for and against the president’s impeachment were held near the presidential residence in Hannam-dong, Yongsan-gu, Seoul.</span>"
     ],
     images: [
       { src: "images/news/hannam-01.jpg", ratio: "1714/2400", caption: "태극기와 성조기를 든 지지자들이 관저 앞 거리를 걷고 있다.", captionEn: "Supporters carrying Korean and American flags walk outside the residence." },
