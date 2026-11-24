@@ -274,8 +274,8 @@ window.PROJECTS = [
     date: "2025. 9.",
     location: "Studio, Seoul",
     desc: [
-      "[작업 설명이 들어갑니다.]",
-      "<span class=\"mute\">[English text]</span>"
+      "영혼의 무게는 21그램이라는 말이 있다.",
+      "<span class=\"mute\">They say the soul weighs 21 grams.</span>"
     ],
     images: [
       { src: "images/yogoe/yogoe-01.jpg", ratio: "1954/2400", caption: "" },
