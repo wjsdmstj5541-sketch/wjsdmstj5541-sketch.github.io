@@ -72,8 +72,8 @@ window.PROJECTS = [
     publication: "개인 작업 — 청(靑)",
     hero: 4,                      // 크게 보여줄 사진 번호
     desc: [
-      "[작업 설명이 들어갑니다.]",
-      "<span class=\"mute\">[English text]</span>"
+      "우리는 자유롭지만, 스스로 선택하지 않음으로써 세상의 넓이를 단정짓고 있었던 건 아닐까. 선택의 자유를 가지고 있음에도 스스로 그 가능성을 제한하는 인간의 모순을 다룬 작업이다. 자유를 상징하는 날개와 비행이 불가능한 수중 공간을 대비시켜 무력함과 자발적 고립을 표현했다. 외부의 억압이 아닌 스스로 단절시킨 자유에 대해 질문을 던진다.",
+      "<span class=\"mute\">We are free — yet by not choosing, have we been deciding for ourselves how wide the world can be? This work looks at the human contradiction of holding the freedom to choose while limiting its possibilities on our own. Wings, a symbol of freedom, are set against an underwater space where flight is impossible, expressing helplessness and self-imposed isolation. It asks about a freedom cut off not by outside oppression, but by ourselves.</span>"
     ],
     images: [
       { src: "images/severed/severed-01.jpg", ratio: "1714/2400", caption: "" },
