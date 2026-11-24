@@ -342,26 +342,26 @@ window.PROJECTS = [
     // 맨 위 메인 사진 (컴카드에는 들어가지 않는 따로 한 장)
     lead: { src: "images/compcard/lead.jpg", ratio: "1920/2400", caption: "" },
     desc: [
-      "[작업 설명이 들어갑니다.]",
-      "<span class=\"mute\">[English text]</span>"
+      "날것의 모습을 담는 것이 좋다. 꾸밈없는 순간에 그 사람만의 분위기가 고스란히 묻어난다.",
+      "<span class=\"mute\">I like to capture people as they are. In unadorned moments, a person’s own atmosphere comes through, whole.</span>"
     ],
     // 모델별 컴카드: 첫 장이 크게, 나머지 4장이 오른쪽에 작게
     groups: [
-      { label: "Model 01", images: [
+      { label: "수경", images: [
           { src: "images/compcard/m1-01.jpg", ratio: "1598/2400", caption: "" },
           { src: "images/compcard/m1-02.jpg", ratio: "1598/2400", caption: "" },
           { src: "images/compcard/m1-03.jpg", ratio: "1599/2400", caption: "" },
           { src: "images/compcard/m1-04.jpg", ratio: "1598/2400", caption: "" },
           { src: "images/compcard/m1-05.jpg", ratio: "1599/2400", caption: "" }
       ] },
-      { label: "Model 02", images: [
+      { label: "수빈", images: [
           { src: "images/compcard/m2-01.jpg", ratio: "1714/2400", caption: "" },
           { src: "images/compcard/m2-02.jpg", ratio: "1714/2400", caption: "" },
           { src: "images/compcard/m2-03.jpg", ratio: "1714/2400", caption: "" },
           { src: "images/compcard/m2-04.jpg", ratio: "1714/2400", caption: "" },
           { src: "images/compcard/m2-05.jpg", ratio: "1598/2400", caption: "" }
       ] },
-      { label: "Model 03", images: [
+      { label: "신비", images: [
           { src: "images/compcard/m3-01.jpg", ratio: "1920/2400", caption: "" },
           { src: "images/compcard/m3-02.jpg", ratio: "1920/2400", caption: "" },
           { src: "images/compcard/m3-03.jpg", ratio: "1919/2400", caption: "" },
