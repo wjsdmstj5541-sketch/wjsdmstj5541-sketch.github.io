@@ -19,3 +19,7 @@
 
 ## 배포
 폴더 전체를 GitHub Pages, Netlify, Vercel 등에 그대로 올리면 됩니다.
+
+## 사진 크기
+- 사진은 긴 변 1600px, 품질 78로 저장 (`sips -Z 1600 -s format jpeg -s formatOptions 78`).
+- 같은 경로로 `images/thumbs/` 에 800px 사본을 만든다 (`sips -Z 800 ... formatOptions 72`). 페이지는 작은 사본을 먼저 쓰고, 크게 보기에서만 1600px 원본을 쓴다.

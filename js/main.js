@@ -22,9 +22,16 @@
   }
 
   // real photo when src is set, otherwise a toned placeholder of the same ratio
-  function media(im, label = "") {
+  // every jpg in images/ has an 800px copy in images/thumbs/; the browser picks the smaller one when it is enough
+  function img(src, alt, sizes = "(max-width: 820px) 100vw, 620px") {
+    const t = /^images\/.+\.jpe?g$/i.test(src) && !src.startsWith("images/thumbs/") ? "images/thumbs/" + src.slice(7) : "";
+    const set = t ? ` srcset="${esc(t)} 800w, ${esc(src)} 1600w" sizes="${sizes}"` : "";
+    return `<img src="${esc(src)}"${set} alt="${esc(alt)}" loading="lazy" decoding="async">`;
+  }
+
+  function media(im, label = "", sizes) {
     if (im.src) {
-      return `<div class="media"><img src="${esc(im.src)}" alt="${esc(im.alt || im.caption || "")}" loading="lazy"></div>`;
+      return `<div class="media">${img(im.src, im.alt || im.caption || "", sizes)}</div>`;
     }
     const tone = im.tone || "#b9b6af";
     const ratio = im.ratio || "3/2";
@@ -157,7 +164,7 @@
       body = `<section class="work-grid">` + list.map((p) => {
         const fd = field(p.field);
         const im = cover(p);
-        const pic = im.src ? `<img src="${esc(im.src)}" alt="${esc(p.title)}" loading="lazy">` : media(im);
+        const pic = im.src ? img(im.src, p.title, "(max-width: 820px) 50vw, 320px") : media(im);
         return `<a class="work-item" href="${projectUrl(p)}" style="--r:${esc(im.ratio || "4/5")}">
           ${pic}
           <div class="cap"><span class="num">${esc(p.id)}</span><span><span class="t">${esc(p.title)}</span> <span class="mute">${esc(p.titleEn)}</span><br><span class="mute">${fd.en}, ${p.year}</span></span></div>
@@ -232,7 +239,7 @@
           <div class="card-label mute">${esc(g.label || "")}</div>
           <div class="card-grid" style="aspect-ratio:calc(2 * ${esc(g.images[0].ratio || "2/3")})">${g.images.map((im, k) => {
             viewed.push(im);
-            const pic = im.src ? `<img src="${esc(im.src)}" alt="${esc(im.caption || "")}" loading="lazy">` : media(im);
+            const pic = im.src ? img(im.src, im.caption || "", k === 0 ? "(max-width: 820px) 60vw, 400px" : "(max-width: 820px) 30vw, 200px") : media(im);
             return `<figure${k === 0 ? ' class="big"' : ""}>${zoom(n++, pic)}</figure>`;
           }).join("")}</div>
         </div>`).join("");
@@ -296,7 +303,7 @@
       cur = (k + imgs.length) % imgs.length;
       const im = imgs[cur], p = items[cur].p;
       $(".lb-title", lb).innerHTML = `${esc(p.title)} <span class="mute">${esc(p.titleEn)}</span>`;
-      box.innerHTML = media(im, pad(cur + 1));
+      box.innerHTML = media(im, pad(cur + 1), "100vw");
       $(".lb-count", lb).textContent = `${pad(cur + 1)} / ${pad(imgs.length)}`;
       $(".lb-cap", lb).innerHTML = `<span>${esc(im.caption)}</span><span class="mute">${esc(im.captionEn || "")}</span><span></span>`;
       fit();
