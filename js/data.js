@@ -329,6 +329,32 @@ window.PROJECTS = [
   },
   {
     id: "12",
+    title: "제주",
+    titleKr: "Jeju",
+    field: "portrait",
+    year: 2025,
+    date: "2025. 4.",
+    location: "Jeju",
+    role: "Photography",
+    publication: "개인 작업",
+    desc: [
+      "[작업 설명이 들어갑니다.]",
+      "<span class=\"mute\">[English text]</span>"
+    ],
+    images: [
+      { src: "images/jeju/jeju-01.jpg", ratio: "2400/1350", caption: "" },
+      { src: "images/jeju/jeju-02.jpg", ratio: "1598/2400", caption: "" },
+      { src: "images/jeju/jeju-03.jpg", ratio: "2400/1599", caption: "" },
+      { src: "images/jeju/jeju-04.jpg", ratio: "2400/1598", caption: "" },
+      { src: "images/jeju/jeju-05.jpg", ratio: "2400/1350", caption: "" },
+      { src: "images/jeju/jeju-06.jpg", ratio: "2400/1714", caption: "" },
+      { src: "images/jeju/jeju-07.jpg", ratio: "2400/1350", caption: "" },
+      { src: "images/jeju/jeju-08.jpg", ratio: "1599/2400", caption: "" },
+      { src: "images/jeju/jeju-09.jpg", ratio: "2400/1350", caption: "" }
+    ]
+  },
+  {
+    id: "13",
     title: "Outside the National Assembly",
     titleKr: "국회 앞",
     field: "other",
@@ -349,7 +375,7 @@ window.PROJECTS = [
     ]
   },
   {
-    id: "13",
+    id: "14",
     title: "Hannam-dong",
     titleKr: "한남동 관저 앞",
     field: "other",
@@ -369,7 +395,7 @@ window.PROJECTS = [
     ]
   },
   {
-    id: "14",
+    id: "15",
     title: "Olympic Handball Arena",
     titleKr: "올림픽 핸드볼경기장 앞",
     field: "other",
