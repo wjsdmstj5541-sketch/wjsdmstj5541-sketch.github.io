@@ -398,8 +398,8 @@ window.PROJECTS = [
     date: "2026. 4.",
     location: "Seoul",
     desc: [
-      "[작업 설명이 들어갑니다.]",
-      "<span class=\"mute\">[English text]</span>"
+      "꽃을 잡고 버텨, 저 아랜 낭떠러지라고!",
+      "<span class=\"mute\">Hold on to the flowers — there’s a cliff down there!</span>"
     ],
     images: [
       { src: "images/dream/dream-01.jpg", ratio: "1714/2400", caption: "" },
