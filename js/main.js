@@ -229,7 +229,7 @@
       viewed = [shown[0]];
       const cards = p.groups.map((g) => `<div class="card">
           <div class="card-label mute">${esc(g.label || "")}</div>
-          <div class="card-grid">${g.images.map((im, k) => {
+          <div class="card-grid" style="aspect-ratio:calc(2 * ${esc(g.images[0].ratio || "2/3")})">${g.images.map((im, k) => {
             viewed.push(im);
             const pic = im.src ? `<img src="${esc(im.src)}" alt="${esc(im.caption || "")}" loading="lazy">` : media(im);
             return `<figure${k === 0 ? ' class="big"' : ""}>${zoom(n++, pic)}</figure>`;
