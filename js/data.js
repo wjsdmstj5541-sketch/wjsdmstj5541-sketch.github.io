@@ -247,14 +247,14 @@ window.PROJECTS = [
   {
     id: "09",
     title: "청",
-    titleKr: "Cheong",
+    titleKr: "k1mche0ng",
     field: "portrait",
     year: 2026,
     date: "2026. 4.",
     location: "Studio, Seoul",
     desc: [
-      "[작업 설명이 들어갑니다.]",
-      "<span class=\"mute\">[English text]</span>"
+      "우리 다음엔 뭐할까?",
+      "<span class=\"mute\">What shall we do next?</span>"
     ],
     images: [
       { src: "images/cheong/cheong-01.jpg", ratio: "1901/2400", caption: "" },
