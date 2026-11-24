@@ -379,8 +379,8 @@ window.PROJECTS = [
     date: "2025. 12.",
     location: "Studio, Seoul",
     desc: [
-      "[작업 설명이 들어갑니다.]",
-      "<span class=\"mute\">[English text]</span>"
+      "인체의 신비.",
+      "<span class=\"mute\">The mystery of the human body.</span>"
     ],
     images: [
       { src: "images/body/body-01.jpg", ratio: "1714/2400", caption: "" },
