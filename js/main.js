@@ -31,7 +31,7 @@
   function header(active) {
     const items = [["index.html", "Index"], ["work.html", "Work"], ["notes.html", "Notes"], ["about.html", "About"]];
     const nav = items
-      .map(([h, t]) => `<a href="${h}"${t === active ? ' class="is-active" aria-current="page"' : ""}>${t},</a>`)
+      .map(([h, t]) => `<a href="${h}"${t === active ? ' class="is-active" aria-current="page"' : ""}>${t}</a><span class="sep">,</span>`)
       .join(" ");
     return `<header class="site-header grid" id="top">
       <a class="brand" href="index.html">${esc(S.name)} <span class="mute">${esc(S.nameKr)}</span></a>
