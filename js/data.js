@@ -228,7 +228,8 @@ window.PROJECTS = [
       { src: "images/untitled-3/untitled3-03.jpg", ratio: "1714/2400", caption: "" },
       { src: "images/untitled-3/untitled3-04.jpg", ratio: "1599/2400", caption: "" },
       { src: "images/untitled-3/untitled3-05.jpg", ratio: "2400/1714", caption: "" },
-      { src: "images/untitled-3/untitled3-06.jpg", ratio: "1920/2400", caption: "" }
+      { src: "images/untitled-3/untitled3-06.jpg", ratio: "1920/2400", caption: "" },
+      { src: "images/untitled-3/untitled3-07.jpg", ratio: "1714/2400", caption: "" }
     ]
   },
   {
