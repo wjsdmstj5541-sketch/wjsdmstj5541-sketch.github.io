@@ -2,6 +2,8 @@
   "use strict";
 
   const S = window.SITE, P = window.PROJECTS, F = window.FIELDS;
+  // a project made of groups (comp cards) also gets a flat images list, used for covers and numbering
+  P.forEach((p) => { if (p.groups && !p.images) p.images = p.groups.flatMap((g) => g.images); });
   const $ = (s, r = document) => r.querySelector(s);
   const q = new URLSearchParams(location.search);
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -220,7 +222,23 @@
         <div><div class="label mute">Description</div>${paras(p.desc || [])}</div>
         <dl class="plate-meta">${meta}</dl>
       </div>`;
-    let plates = shown.length ? fig(shown[0], 1) + text + shown.slice(1).map((im, k) => fig(im, k + 2)).join("") : text;
+    let plates, viewed = shown;
+    if (p.groups) {
+      // comp cards: one per model — first photo large on the left, the next four small on the right
+      let n = 2;
+      viewed = [shown[0]];
+      const cards = p.groups.map((g) => `<div class="card">
+          <div class="card-label mute">${esc(g.label || "")}</div>
+          <div class="card-grid">${g.images.map((im, k) => {
+            viewed.push(im);
+            const pic = im.src ? `<img src="${esc(im.src)}" alt="${esc(im.caption || "")}" loading="lazy">` : media(im);
+            return `<figure${k === 0 ? ' class="big"' : ""}>${zoom(n++, pic)}</figure>`;
+          }).join("")}</div>
+        </div>`).join("");
+      plates = (shown.length ? fig(shown[0], 1) : "") + text + cards;
+    } else {
+      plates = shown.length ? fig(shown[0], 1) + text + shown.slice(1).map((im, k) => fig(im, k + 2)).join("") : text;
+    }
     plates = `<div class="sheet">${plates}</div>`;
 
     const prev = P[(i - 1 + P.length) % P.length];
@@ -230,7 +248,7 @@
         <a class="nxt" href="${projectUrl(next)}"><span class="mute">Next</span><span><span class="t">${esc(next.title)}</span> →</span></a>
       </nav>`);
 
-    lightbox(shown.map((im) => ({ p, im })), ".plates .zoom");
+    lightbox(viewed.map((im) => ({ p, im })), ".plates .zoom");
   }
 
   // press-style credit line: place, date — © name

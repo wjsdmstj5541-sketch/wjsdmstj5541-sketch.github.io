@@ -214,6 +214,14 @@ figure figcaption { margin-top: 8px; }
 .sheet-text p + p { margin-top: var(--line-h); }
 .sheet-text .plate-meta { margin-top: 0; padding-top: 0; border-top: 0; grid-template-columns: 80px 1fr; align-content: start; }
 .sheet .zoom:hover img { opacity: .9; }
+/* comp card: 1 large + 2×2 small (sized for 2:3 portraits) */
+.card + .card { margin-top: clamp(64px, 7vw, 112px); }
+.card-label { margin-bottom: 8px; }
+.card-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; aspect-ratio: 4 / 3; }
+.card-grid .big { grid-row: span 2; }
+.card-grid figure { min-height: 0; position: relative; margin: 0 !important; }
+.card-grid .zoom { position: absolute; inset: 0; }
+.card-grid img { width: 100%; height: 100%; object-fit: cover; }
 .thumbs {
   display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr));
   gap: 28px var(--pad); margin-top: clamp(40px, 5vw, 72px);

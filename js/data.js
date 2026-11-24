@@ -355,6 +355,32 @@ window.PROJECTS = [
   },
   {
     id: "13",
+    title: "Comp Card",
+    titleKr: "컴카드",
+    field: "portrait",
+    year: 2026,
+    date: "2026. 9.",
+    location: "Studio, Seoul",
+    role: "Photography",
+    publication: "모델 컴카드",
+    hero: 2,                      // 크게 보여줄 사진 번호 (모델 순서대로 이어 센 번호)
+    desc: [
+      "[작업 설명이 들어갑니다.]",
+      "<span class=\"mute\">[English text]</span>"
+    ],
+    // 모델별 컴카드: 첫 장이 크게, 나머지 4장이 오른쪽에 작게
+    groups: [
+      { label: "Model 01", images: [
+          { src: "images/compcard/m1-01.jpg", ratio: "1598/2400", caption: "" },
+          { src: "images/compcard/m1-02.jpg", ratio: "1598/2400", caption: "" },
+          { src: "images/compcard/m1-03.jpg", ratio: "1599/2400", caption: "" },
+          { src: "images/compcard/m1-04.jpg", ratio: "1598/2400", caption: "" },
+          { src: "images/compcard/m1-05.jpg", ratio: "1599/2400", caption: "" }
+      ] }
+    ]
+  },
+  {
+    id: "14",
     title: "Outside the National Assembly",
     titleKr: "국회 앞",
     field: "other",
@@ -375,7 +401,7 @@ window.PROJECTS = [
     ]
   },
   {
-    id: "14",
+    id: "15",
     title: "Hannam-dong",
     titleKr: "한남동 관저 앞",
     field: "other",
@@ -395,7 +421,7 @@ window.PROJECTS = [
     ]
   },
   {
-    id: "15",
+    id: "16",
     title: "Olympic Handball Arena",
     titleKr: "올림픽 핸드볼경기장 앞",
     field: "other",
