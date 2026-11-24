@@ -3,7 +3,8 @@
 
   const S = window.SITE, P = window.PROJECTS, F = window.FIELDS;
   // a project made of groups (comp cards) also gets a flat images list, used for covers and numbering
-  P.forEach((p) => { if (p.groups && !p.images) p.images = p.groups.flatMap((g) => g.images); });
+  // (a separate lead photo, if given, comes first and is the main photo)
+  P.forEach((p) => { if (p.groups && !p.images) p.images = (p.lead ? [p.lead] : []).concat(p.groups.flatMap((g) => g.images)); });
   const $ = (s, r = document) => r.querySelector(s);
   const q = new URLSearchParams(location.search);
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));

@@ -363,7 +363,8 @@ window.PROJECTS = [
     location: "Studio, Seoul",
     role: "Photography",
     publication: "모델 컴카드",
-    hero: 2,                      // 크게 보여줄 사진 번호 (모델 순서대로 이어 센 번호)
+    // 맨 위 메인 사진 (컴카드에는 들어가지 않는 따로 한 장)
+    lead: { src: "images/compcard/lead.jpg", ratio: "1920/2400", caption: "" },
     desc: [
       "[작업 설명이 들어갑니다.]",
       "<span class=\"mute\">[English text]</span>"
