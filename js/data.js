@@ -234,6 +234,30 @@ window.PROJECTS = [
   },
   {
     id: "08",
+    title: "현",
+    titleKr: "Hyeon",
+    field: "portrait",
+    year: 2026,
+    date: "2026. 8.",
+    location: "Studio, Seoul",
+    role: "Photography",
+    publication: "개인 작업",
+    desc: [
+      "[작업 설명이 들어갑니다.]",
+      "<span class=\"mute\">[English text]</span>"
+    ],
+    images: [
+      { src: "images/hyeon/hyeon-01.jpg", ratio: "1954/2400", caption: "" },
+      { src: "images/hyeon/hyeon-02.jpg", ratio: "1714/2400", caption: "" },
+      { src: "images/hyeon/hyeon-03.jpg", ratio: "1714/2400", caption: "" },
+      { src: "images/hyeon/hyeon-04.jpg", ratio: "1599/2400", caption: "" },
+      { src: "images/hyeon/hyeon-05.jpg", ratio: "1714/2400", caption: "" },
+      { src: "images/hyeon/hyeon-06.jpg", ratio: "1714/2400", caption: "" },
+      { src: "images/hyeon/hyeon-07.jpg", ratio: "1714/2400", caption: "" }
+    ]
+  },
+  {
+    id: "09",
     title: "Outside the National Assembly",
     titleKr: "국회 앞",
     field: "other",
@@ -254,7 +278,7 @@ window.PROJECTS = [
     ]
   },
   {
-    id: "09",
+    id: "10",
     title: "Hannam-dong",
     titleKr: "한남동 관저 앞",
     field: "other",
@@ -274,7 +298,7 @@ window.PROJECTS = [
     ]
   },
   {
-    id: "10",
+    id: "11",
     title: "Olympic Handball Arena",
     titleKr: "올림픽 핸드볼경기장 앞",
     field: "other",
