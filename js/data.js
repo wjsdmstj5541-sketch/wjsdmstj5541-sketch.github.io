@@ -306,6 +306,29 @@ window.PROJECTS = [
   },
   {
     id: "11",
+    title: "수경",
+    titleKr: "Sugyeong",
+    field: "portrait",
+    year: 2026,
+    date: "2026. 3.",
+    location: "Namsan Studio, Seoul",
+    role: "Photography",
+    publication: "개인 작업",
+    desc: [
+      "[작업 설명이 들어갑니다.]",
+      "<span class=\"mute\">[English text]</span>"
+    ],
+    images: [
+      { src: "images/sugyeong/sugyeong-01.jpg", ratio: "1714/2400", caption: "" },
+      { src: "images/sugyeong/sugyeong-02.jpg", ratio: "2400/2400", caption: "" },
+      { src: "images/sugyeong/sugyeong-03.jpg", ratio: "2400/1598", caption: "" },
+      { src: "images/sugyeong/sugyeong-04.jpg", ratio: "2400/1598", caption: "" },
+      { src: "images/sugyeong/sugyeong-05.jpg", ratio: "2400/1714", caption: "" },
+      { src: "images/sugyeong/sugyeong-06.jpg", ratio: "1920/2400", caption: "" }
+    ]
+  },
+  {
+    id: "12",
     title: "Outside the National Assembly",
     titleKr: "국회 앞",
     field: "other",
@@ -326,7 +349,7 @@ window.PROJECTS = [
     ]
   },
   {
-    id: "12",
+    id: "13",
     title: "Hannam-dong",
     titleKr: "한남동 관저 앞",
     field: "other",
@@ -346,7 +369,7 @@ window.PROJECTS = [
     ]
   },
   {
-    id: "13",
+    id: "14",
     title: "Olympic Handball Arena",
     titleKr: "올림픽 핸드볼경기장 앞",
     field: "other",
