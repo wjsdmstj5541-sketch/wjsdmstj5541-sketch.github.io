@@ -231,8 +231,8 @@ window.PROJECTS = [
     date: "2026. 8.",
     location: "Studio, Seoul",
     desc: [
-      "[작업 설명이 들어갑니다.]",
-      "<span class=\"mute\">[English text]</span>"
+      "촬영 당시 직접 만들어 오신 초커가 그분의 분위기와 무척 잘 어울렸다. 섬세한 감각에 감탄했던 기억이 난다.",
+      "<span class=\"mute\">The choker she made herself and brought to the shoot suited her mood perfectly. I remember being struck by her delicate sense of detail.</span>"
     ],
     images: [
       { src: "images/hyeon/hyeon-01.jpg", ratio: "1954/2400", caption: "" },
