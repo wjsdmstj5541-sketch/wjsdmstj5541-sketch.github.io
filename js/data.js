@@ -41,8 +41,8 @@ window.SITE = {
     titleKr: "인트로",
     photos: ["images/intro.jpg"],
     text: [
-      "[여기에 내 사진의 분위기를 설명하는 글이 들어갑니다.]",
-      "<span class=\"mute\">[English text]</span>"
+      "두려움에 머물다 오래도록 바라온 것을 놓치고 싶지는 않다.",
+      "<span class=\"mute\">I don’t want to linger in fear and lose what I have long hoped for.</span>"
     ]
   },
 
